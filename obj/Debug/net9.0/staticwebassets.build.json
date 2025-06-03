@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "APKKKThOmqLUzz1ckQluxe3jCTSFIduDArGM5RSxpPM=",
+  "Source": "BlogSystem.API",
+  "BasePath": "_content/BlogSystem.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

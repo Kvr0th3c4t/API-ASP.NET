@@ -1,0 +1,702 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "BlogSystem.API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Blog": {
+      "get": {
+        "tags": [
+          "Blog"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Blog"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBlogPostDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBlogPostDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBlogPostDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Blog/{id}": {
+      "delete": {
+        "tags": [
+          "Blog"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Formulario/excedente-energia-nuevo": {
+      "post": {
+        "tags": [
+          "Formulario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaNuevoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaNuevoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaNuevoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/excedente-energia-nuevo/{id}": {
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaNuevo"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateBlogPostDto": {
+        "required": [
+          "Content",
+          "Title"
+        ],
+        "type": "object",
+        "properties": {
+          "Title": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "Content": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExcedenteEnergiaNuevo": {
+        "required": [
+          "TipoEntidad"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "FechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Activo": {
+            "type": "boolean"
+          },
+          "InstalacionConstruida": {
+            "type": "boolean"
+          },
+          "InstalacionContruidaFalse": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "InstalacionEnConstruccion": {
+            "type": "boolean"
+          },
+          "InstalacionEnConstruccionTrue": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "KwTotalesProduccion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "type": "string",
+            "nullable": true
+          },
+          "DestinaInstalacion": {
+            "type": "boolean"
+          },
+          "KwDestinados": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NumeroHoras": {
+            "type": "string",
+            "nullable": true
+          },
+          "PaisInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "TieneLicencia": {
+            "type": "boolean"
+          },
+          "CapacidadProduccionLicencia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "QuierePersonalTramitar": {
+            "type": "boolean"
+          },
+          "QuiereProducirConExcedente": {
+            "type": "boolean"
+          },
+          "AlquilarInstalaciones": {
+            "type": "boolean"
+          },
+          "AnosAlquiler": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExcedenteEnergiaNuevoDto": {
+        "required": [
+          "TipoEntidad",
+          "TipoTecnologia"
+        ],
+        "type": "object",
+        "properties": {
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "InstalacionConstruida": {
+            "type": "boolean"
+          },
+          "InstalacionContruidaFalse": {
+            "type": "string",
+            "nullable": true
+          },
+          "InstalacionEnConstruccion": {
+            "type": "boolean"
+          },
+          "InstalacionEnConstruccionTrue": {
+            "type": "string",
+            "nullable": true
+          },
+          "KwTotalesProduccion": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "type": "string",
+            "nullable": true
+          },
+          "DestinaInstalacion": {
+            "type": "boolean"
+          },
+          "KwDestinados": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "NumeroHoras": {
+            "type": "string",
+            "nullable": true
+          },
+          "PaisInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "TieneLicencia": {
+            "type": "boolean"
+          },
+          "CapacidadProduccionLicencia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "QuierePersonalTramitar": {
+            "type": "boolean"
+          },
+          "QuiereProducirConExcedente": {
+            "type": "boolean"
+          },
+          "AlquilarInstalaciones": {
+            "type": "boolean"
+          },
+          "AnosAlquiler": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoginDto": {
+        "required": [
+          "Email",
+          "Password"
+        ],
+        "type": "object",
+        "properties": {
+          "Email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "Password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterDto": {
+        "required": [
+          "Email",
+          "Password",
+          "Username"
+        ],
+        "type": "object",
+        "properties": {
+          "Username": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "Email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "Password": {
+            "minLength": 6,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoEntidad": {
+        "enum": [
+          "EMPRESA",
+          "PARTICULAR"
+        ],
+        "type": "string"
+      },
+      "TipoTecnologia": {
+        "enum": [
+          "SOLAR",
+          "EÓLICA",
+          "HIDROELÉCTRICA",
+          "BIOMASA",
+          "OTRA"
+        ],
+        "type": "string"
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. Example: \"Authorization: Bearer {token}\"",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
