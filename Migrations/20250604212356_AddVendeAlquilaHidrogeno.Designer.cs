@@ -4,6 +4,7 @@ using BlogSystem.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogSystem.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250604212356_AddVendeAlquilaHidrogeno")]
+    partial class AddVendeAlquilaHidrogeno
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -652,16 +655,14 @@ namespace BlogSystem.API.Migrations
                     b.Property<bool>("TieneCamionesMetanol")
                         .HasColumnType("bit");
 
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TipoEntidad")
+                        .HasColumnType("int");
 
                     b.Property<string>("TipoRed")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TipoTransporte")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TipoTransporte")
+                        .HasColumnType("int");
 
                     b.Property<string>("TipoTransporteHidrogeno")
                         .HasColumnType("nvarchar(max)");

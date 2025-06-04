@@ -215,6 +215,94 @@
         }
       }
     },
+    "/api/Formulario/produccion-hidrogeno": {
+      "post": {
+        "tags": [
+          "Formulario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduccionHidrogenoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduccionHidrogenoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProduccionHidrogenoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/{id}": {
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProduccionHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Formulario/excedente-energia-nuevo/{id}": {
       "get": {
         "tags": [
@@ -254,6 +342,378 @@
           }
         }
       }
+    },
+    "/api/Formulario/excedente-energia-funcionamiento": {
+      "post": {
+        "tags": [
+          "Formulario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamientoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamientoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamientoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/excedente-energia-funcionamiento/{id}": {
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExcedenteEnergiaEnFuncionamiento"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/vende-alquila-hidrogeno": {
+      "post": {
+        "tags": [
+          "Formulario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendeAlquilaHidrogenoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendeAlquilaHidrogenoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendeAlquilaHidrogenoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/vende-alquila-hidrogeno/{id}": {
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendeAlquilaHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/transporte-hidrogeno": {
+      "post": {
+        "tags": [
+          "Formulario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransporteHidrogenoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransporteHidrogenoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransporteHidrogenoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransporteHidrogeno"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransporteHidrogeno"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TransporteHidrogeno"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Formulario/transporte-hidrogeno/{id}": {
+      "get": {
+        "tags": [
+          "Formulario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransporteHidrogeno"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -273,6 +733,389 @@
           "Content": {
             "minLength": 1,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExcedenteEnergiaEnFuncionamiento": {
+        "required": [
+          "CapacidadProduccion",
+          "CapacidadProduccionEnergia",
+          "ExcedenteEnergia",
+          "TipoEntidad",
+          "TipoTecnologia"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "FechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Activo": {
+            "type": "boolean"
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "type": "string",
+            "nullable": true
+          },
+          "CapacidadProduccionEnergia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ExcedenteEnergia": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "HorasExcedenteEnergia": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DiasExcedenteEnergia": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CapacidadProduccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProduceEnergia": {
+            "type": "boolean"
+          },
+          "FechaInicioProduccion": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "VierteEnergiaRed": {
+            "type": "boolean"
+          },
+          "VierteEnergiaTrue": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Autoconsumo": {
+            "type": "boolean"
+          },
+          "PaisInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "TieneLicencia": {
+            "type": "boolean"
+          },
+          "CapacidadProduccionLicencia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "QuiereProducirConExcedente": {
+            "type": "boolean"
+          },
+          "AlquilarParteOTotalidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "Observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExcedenteEnergiaEnFuncionamientoDto": {
+        "required": [
+          "CapacidadProduccion",
+          "CapacidadProduccionEnergia",
+          "ExcedenteEnergia",
+          "TipoEntidad",
+          "TipoTecnologia"
+        ],
+        "type": "object",
+        "properties": {
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "type": "string",
+            "nullable": true
+          },
+          "CapacidadProduccionEnergia": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "ExcedenteEnergia": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "HorasExcedenteEnergia": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DiasExcedenteEnergia": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CapacidadProduccion": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "ProduceEnergia": {
+            "type": "boolean"
+          },
+          "FechaInicioProduccion": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "VierteEnergiaRed": {
+            "type": "boolean"
+          },
+          "VierteEnergiaTrue": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "Autoconsumo": {
+            "type": "boolean"
+          },
+          "PaisInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioInstalacion": {
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "TieneLicencia": {
+            "type": "boolean"
+          },
+          "CapacidadProduccionLicencia": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "QuiereProducirConExcedente": {
+            "type": "boolean"
+          },
+          "AlquilarParteOTotalidad": {
+            "type": "string",
+            "nullable": true
+          },
+          "Observaciones": {
+            "maxLength": 1000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -642,6 +1485,573 @@
         },
         "additionalProperties": false
       },
+      "ProduccionHidrogeno": {
+        "required": [
+          "TipoEntidad",
+          "TipoSectorProduccion",
+          "TipoTecnologia"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "FechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Activo": {
+            "type": "boolean"
+          },
+          "InstalacionConstruida": {
+            "type": "boolean"
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CuantoKiloGramosHora": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "Autoconsumo": {
+            "type": "boolean"
+          },
+          "TipoSectorProduccion": {
+            "$ref": "#/components/schemas/TipoSectorProduccion"
+          },
+          "MovilidadSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ResidencialSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "IndustrialSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DistribucionSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "OtroSector": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MetanolVerde": {
+            "type": "boolean"
+          },
+          "EquiposProducir": {
+            "type": "boolean"
+          },
+          "EquiposAlmacenar": {
+            "type": "boolean"
+          },
+          "OtraTecnologia": {
+            "type": "boolean"
+          },
+          "IndicarCual": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NecesitaEmpresa": {
+            "type": "boolean"
+          },
+          "PaisNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "BaresHidrogeno": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AlquilarTerrenoSinInstalaciones": {
+            "type": "boolean"
+          },
+          "AnosAlquiler": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "AlquilarTerrenoConInstalaciones": {
+            "type": "boolean"
+          },
+          "TipoTecnologiaAlquiler": {
+            "$ref": "#/components/schemas/TipoTecnologiaNullable"
+          },
+          "OtrasTecnologiasAlquiler": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ContratarPPA": {
+            "type": "boolean"
+          },
+          "AyudaProveedorPPA": {
+            "type": "boolean"
+          },
+          "ProporcionClientes": {
+            "type": "boolean"
+          },
+          "RedEmpresas": {
+            "type": "boolean"
+          },
+          "RedHidrogeneras": {
+            "type": "boolean"
+          },
+          "RedPuntosDispensacion": {
+            "type": "boolean"
+          },
+          "TramitacionSolicitudes": {
+            "type": "boolean"
+          },
+          "FechaHidrogenoDisponible": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "Observaciones": {
+            "maxLength": 2000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProduccionHidrogenoDto": {
+        "required": [
+          "TipoEntidad",
+          "TipoSectorProduccion",
+          "TipoTecnologia"
+        ],
+        "type": "object",
+        "properties": {
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "format": "tel",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "InstalacionConstruida": {
+            "type": "boolean"
+          },
+          "TipoTecnologia": {
+            "$ref": "#/components/schemas/TipoTecnologia"
+          },
+          "OtrasTecnologias": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CuantoKiloGramosHora": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "Autoconsumo": {
+            "type": "boolean"
+          },
+          "TipoSectorProduccion": {
+            "$ref": "#/components/schemas/TipoSectorProduccion"
+          },
+          "MovilidadSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ResidencialSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "IndustrialSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DistribucionSelect": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "OtroSector": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioProduccion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioConsumicion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MetanolVerde": {
+            "type": "boolean"
+          },
+          "EquiposProducir": {
+            "type": "boolean"
+          },
+          "EquiposAlmacenar": {
+            "type": "boolean"
+          },
+          "OtraTecnologia": {
+            "type": "boolean"
+          },
+          "IndicarCual": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NecesitaEmpresa": {
+            "type": "boolean"
+          },
+          "PaisNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioNecesita": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "BaresHidrogeno": {
+            "maximum": 2000,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "AlquilarTerrenoSinInstalaciones": {
+            "type": "boolean"
+          },
+          "AnosAlquiler": {
+            "maximum": 100,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "AlquilarTerrenoConInstalaciones": {
+            "type": "boolean"
+          },
+          "TipoTecnologiaAlquiler": {
+            "$ref": "#/components/schemas/TipoTecnologiaNullable"
+          },
+          "OtrasTecnologiasAlquiler": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ContratarPPA": {
+            "type": "boolean"
+          },
+          "AyudaProveedorPPA": {
+            "type": "boolean"
+          },
+          "ProporcionClientes": {
+            "type": "boolean"
+          },
+          "RedEmpresas": {
+            "type": "boolean"
+          },
+          "RedHidrogeneras": {
+            "type": "boolean"
+          },
+          "RedPuntosDispensacion": {
+            "type": "boolean"
+          },
+          "TramitacionSolicitudes": {
+            "type": "boolean"
+          },
+          "FechaHidrogenoDisponible": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "Observaciones": {
+            "maxLength": 2000,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterDto": {
         "required": [
           "Email",
@@ -674,6 +2084,16 @@
         ],
         "type": "string"
       },
+      "TipoSectorProduccion": {
+        "enum": [
+          "MOVILIDAD",
+          "RESIDENCIAL",
+          "INDUSTRIAL",
+          "DISTRIBUCIÓN",
+          "OTRO"
+        ],
+        "type": "string"
+      },
       "TipoTecnologia": {
         "enum": [
           "SOLAR",
@@ -683,6 +2103,652 @@
           "OTRA"
         ],
         "type": "string"
+      },
+      "TipoTecnologiaNullable": {
+        "enum": [
+          "SOLAR",
+          "EÓLICA",
+          "HIDROELÉCTRICA",
+          "BIOMASA",
+          "OTRA",
+          null
+        ],
+        "type": "string",
+        "nullable": true
+      },
+      "TipoTerreno": {
+        "enum": [
+          "URBANO",
+          "URBANIZABLE",
+          "RÚSTICO"
+        ],
+        "type": "string"
+      },
+      "TipoTransporte": {
+        "enum": [
+          "FERROCARRIL",
+          "CARRETERA",
+          "BARCO"
+        ],
+        "type": "string"
+      },
+      "TransporteHidrogeno": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "FechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Activo": {
+            "type": "boolean"
+          },
+          "LicenciaMercanciaPeligrosa": {
+            "type": "boolean"
+          },
+          "FalseLicenciaAsesoramiento": {
+            "type": "boolean"
+          },
+          "TipoTransporte": {
+            "$ref": "#/components/schemas/TipoTransporte"
+          },
+          "TieneCaminonesHidrogeno": {
+            "type": "boolean"
+          },
+          "TieneCamionesMetanol": {
+            "type": "boolean"
+          },
+          "TieneCamionesAmoniaco": {
+            "type": "boolean"
+          },
+          "RedTransporte": {
+            "type": "boolean"
+          },
+          "TipoRed": {
+            "type": "string",
+            "nullable": true
+          },
+          "TipoTransporteHidrogeno": {
+            "type": "string",
+            "nullable": true
+          },
+          "PresionHidrogeno": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NecesitaFormacion": {
+            "type": "boolean"
+          },
+          "Observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransporteHidrogenoDto": {
+        "required": [
+          "TipoEntidad",
+          "TipoTransporte"
+        ],
+        "type": "object",
+        "properties": {
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "LicenciaMercanciaPeligrosa": {
+            "type": "boolean"
+          },
+          "FalseLicenciaAsesoramiento": {
+            "type": "boolean"
+          },
+          "TipoTransporte": {
+            "$ref": "#/components/schemas/TipoTransporte"
+          },
+          "TieneCaminonesHidrogeno": {
+            "type": "boolean"
+          },
+          "TieneCamionesMetanol": {
+            "type": "boolean"
+          },
+          "TieneCamionesAmoniaco": {
+            "type": "boolean"
+          },
+          "RedTransporte": {
+            "type": "boolean"
+          },
+          "TipoRed": {
+            "type": "string",
+            "nullable": true
+          },
+          "TipoTransporteHidrogeno": {
+            "type": "string",
+            "nullable": true
+          },
+          "PresionHidrogeno": {
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "PaisTransporte": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NecesitaFormacion": {
+            "type": "boolean"
+          },
+          "Observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VendeAlquilaHidrogeno": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "FechaRegistro": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Activo": {
+            "type": "boolean"
+          },
+          "MetrosCuadradosTerreno": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TipoTerreno": {
+            "$ref": "#/components/schemas/TipoTerreno"
+          },
+          "TieneLicencia": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "Licencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "VenderAlquilar": {
+            "type": "string",
+            "nullable": true
+          },
+          "AnosAlquiler": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PrecioAlquiler": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PrecioVenta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "PaisAlVen": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaAlVen": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioAlVen": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "Observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VendeAlquilaHidrogenoDto": {
+        "required": [
+          "TipoEntidad",
+          "TipoTerreno"
+        ],
+        "type": "object",
+        "properties": {
+          "TipoEntidad": {
+            "$ref": "#/components/schemas/TipoEntidad"
+          },
+          "Nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Apellidos": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Empresa": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "CIF": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "DNI": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Representante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "NombreRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "ApellidosRepresentante": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Telefono": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "email",
+            "nullable": true
+          },
+          "Municipio": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Provincia": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Pais": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MetrosCuadradosTerreno": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "TipoTerreno": {
+            "$ref": "#/components/schemas/TipoTerreno"
+          },
+          "TieneLicencia": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "Licencia": {
+            "type": "string",
+            "nullable": true
+          },
+          "VenderAlquilar": {
+            "type": "string",
+            "nullable": true
+          },
+          "AnosAlquiler": {
+            "maximum": 99,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "PrecioAlquiler": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "PrecioVenta": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "PaisAlVen": {
+            "type": "string",
+            "nullable": true
+          },
+          "ProvinciaAlVen": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "MunicipioAlVen": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "nullable": true
+          },
+          "Coordenadas": {
+            "type": "string",
+            "nullable": true
+          },
+          "Observaciones": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {

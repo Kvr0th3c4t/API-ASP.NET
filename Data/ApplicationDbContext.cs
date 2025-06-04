@@ -15,6 +15,9 @@ namespace BlogSystem.API.Data
         //FORMULARIOS REGISTRO SERVICIOS
         public DbSet<ExcedenteEnergiaNuevo> ExcedentesEnergiaNuevo { get; set; }
         public DbSet<ExcedenteEnergiaEnFuncionamiento> ExcedentesEnergiaEnFuncionamiento { get; set; }
+        public DbSet<ProduccionHidrogeno> ProduccionesHidrogeno { get; set; }
+        public DbSet<TransporteHidrogeno> TransportesHidrogeno { get; set; }
+        public DbSet<VendeAlquilaHidrogeno> VentaAlquilerHidrogeno { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -55,6 +58,28 @@ namespace BlogSystem.API.Data
             {
                 entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
+            });
+
+            // Configuración para ProduccionHidrogeno
+            modelBuilder.Entity<ProduccionHidrogeno>(entity =>
+            {
+                entity.Property(e => e.TipoEntidad).HasConversion<string>();
+                entity.Property(e => e.TipoTecnologia).HasConversion<string>();
+                entity.Property(e => e.TipoSectorProduccion).HasConversion<string>();
+                entity.Property(e => e.TipoTecnologiaAlquiler).HasConversion<string>();
+            });
+
+            // Configuración para VendeAlquilaHidrogeno
+            modelBuilder.Entity<VendeAlquilaHidrogeno>(entity =>
+            {
+                entity.Property(e => e.TipoEntidad).HasConversion<string>();
+                entity.Property(e => e.TipoTerreno).HasConversion<string>();
+            });
+
+            modelBuilder.Entity<TransporteHidrogeno>(entity =>
+            {
+                entity.Property(e => e.TipoEntidad).HasConversion<string>();
+                entity.Property(e => e.TipoTransporte).HasConversion<string>();
             });
         }
     }
