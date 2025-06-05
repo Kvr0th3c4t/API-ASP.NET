@@ -18,6 +18,7 @@ namespace BlogSystem.API.Data
         public DbSet<ProduccionHidrogeno> ProduccionesHidrogeno { get; set; }
         public DbSet<TransporteHidrogeno> TransportesHidrogeno { get; set; }
         public DbSet<VendeAlquilaHidrogeno> VentaAlquilerHidrogeno { get; set; }
+        public DbSet<ContactoForm> ContactoForm { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

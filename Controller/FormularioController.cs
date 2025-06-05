@@ -453,6 +453,66 @@ namespace BlogSystem.API.Controllers
         {
             return await _context.TransportesHidrogeno.Where(x => x.Activo).ToListAsync();
         }
+
+        //RUTAS PARA EL 'CHATBOT' DE CONTACTA
+        [HttpPost("contacto-form")]
+        public async Task<ActionResult<ContactoForm>> PostContactoForm(ContactoFormDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                // Verificar si ya existe un contacto reciente con el mismo email (opcional)
+                var contactoReciente = await _context.ContactoForm
+                    .Where(c => c.Email == dto.Email &&
+                               c.FechaCreacion > DateTime.UtcNow.AddMinutes(-5))
+                    .FirstOrDefaultAsync();
+
+                if (contactoReciente != null)
+                {
+                    return BadRequest(new { message = "Ya has enviado una solicitud recientemente. Por favor espera unos minutos." });
+                }
+
+                var contacto = new ContactoForm
+                {
+                    Motivo = dto.Motivo,
+                    Email = dto.Email,
+                    FechaCreacion = DateTime.UtcNow
+                };
+
+                _context.ContactoForm.Add(contacto);
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction(nameof(GetContactoForm), new { id = contacto.Id }, contacto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Error al guardar el formulario", error = ex.Message });
+            }
+        }
+
+        [HttpGet("contacto-form/{id}")]
+        public async Task<ActionResult<ContactoForm>> GetContactoForm(int id)
+        {
+            var contacto = await _context.ContactoForm.FindAsync(id);
+
+            if (contacto == null)
+            {
+                return NotFound();
+            }
+
+            return contacto;
+        }
+
+        [HttpGet("contacto-form")]
+        public async Task<ActionResult<IEnumerable<ContactoForm>>> GetContactosForms()
+        {
+            return await _context.ContactoForm.ToListAsync();
+        }
+
     }
 }
     

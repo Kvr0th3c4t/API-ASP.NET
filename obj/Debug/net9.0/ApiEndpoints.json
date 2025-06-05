@@ -101,6 +101,78 @@
   },
   {
     "ContainingType": "BlogSystem.API.Controllers.FormularioController",
+    "Method": "PostContactoForm",
+    "RelativePath": "api/Formulario/contacto-form",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "BlogSystem.API.Models.Dtos.ContactoFormDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BlogSystem.API.Models.ContactoForm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
+    "Method": "GetContactosForms",
+    "RelativePath": "api/Formulario/contacto-form",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[BlogSystem.API.Models.ContactoForm, BlogSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
+    "Method": "GetContactoForm",
+    "RelativePath": "api/Formulario/contacto-form/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BlogSystem.API.Models.ContactoForm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
     "Method": "PostExcedenteEnergiaFuncionamiento",
     "RelativePath": "api/Formulario/excedente-energia-funcionamiento",
     "HttpMethod": "POST",
