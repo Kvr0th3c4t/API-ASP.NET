@@ -844,28 +844,28 @@
     "schemas": {
       "ContactoForm": {
         "required": [
-          "Email",
-          "FechaCreacion",
-          "Motivo"
+          "email",
+          "fechaCreacion",
+          "motivo"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "Motivo": {
+          "motivo": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string"
           },
-          "Email": {
+          "email": {
             "maxLength": 255,
             "minLength": 0,
             "type": "string",
             "format": "email"
           },
-          "FechaCreacion": {
+          "fechaCreacion": {
             "type": "string",
             "format": "date-time"
           }
@@ -874,16 +874,16 @@
       },
       "ContactoFormDto": {
         "required": [
-          "Email",
-          "Motivo"
+          "email",
+          "motivo"
         ],
         "type": "object",
         "properties": {
-          "Motivo": {
+          "motivo": {
             "minLength": 1,
             "type": "string"
           },
-          "Email": {
+          "email": {
             "maxLength": 255,
             "minLength": 0,
             "type": "string",
@@ -894,17 +894,17 @@
       },
       "CreateBlogPostDto": {
         "required": [
-          "Content",
-          "Title"
+          "content",
+          "title"
         ],
         "type": "object",
         "properties": {
-          "Title": {
+          "title": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string"
           },
-          "Content": {
+          "content": {
             "minLength": 1,
             "type": "string"
           }
@@ -913,188 +913,188 @@
       },
       "ExcedenteEnergiaEnFuncionamiento": {
         "required": [
-          "CapacidadProduccion",
-          "CapacidadProduccionEnergia",
-          "ExcedenteEnergia",
-          "TipoEntidad",
-          "TipoTecnologia"
+          "capacidadProduccion",
+          "capacidadProduccionEnergia",
+          "excedenteEnergia",
+          "tipoEntidad",
+          "tipoTecnologia"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "FechaRegistro": {
+          "fechaRegistro": {
             "type": "string",
             "format": "date-time"
           },
-          "Activo": {
+          "activo": {
             "type": "boolean"
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "type": "string",
             "nullable": true
           },
-          "CapacidadProduccionEnergia": {
+          "capacidadProduccionEnergia": {
             "type": "integer",
             "format": "int32"
           },
-          "ExcedenteEnergia": {
+          "excedenteEnergia": {
             "type": "integer",
             "format": "int32"
           },
-          "HorasExcedenteEnergia": {
+          "horasExcedenteEnergia": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DiasExcedenteEnergia": {
+          "diasExcedenteEnergia": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CapacidadProduccion": {
+          "capacidadProduccion": {
             "type": "integer",
             "format": "int32"
           },
-          "ProduceEnergia": {
+          "produceEnergia": {
             "type": "boolean"
           },
-          "FechaInicioProduccion": {
+          "fechaInicioProduccion": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "VierteEnergiaRed": {
+          "vierteEnergiaRed": {
             "type": "boolean"
           },
-          "VierteEnergiaTrue": {
+          "vierteEnergiaTrue": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "Autoconsumo": {
+          "autoconsumo": {
             "type": "boolean"
           },
-          "PaisInstalacion": {
+          "paisInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaInstalacion": {
+          "provinciaInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioInstalacion": {
+          "municipioInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean"
           },
-          "CapacidadProduccionLicencia": {
+          "capacidadProduccionLicencia": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "QuiereProducirConExcedente": {
+          "quiereProducirConExcedente": {
             "type": "boolean"
           },
-          "AlquilarParteOTotalidad": {
+          "alquilarParteOTotalidad": {
             "type": "string",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "type": "string",
             "nullable": true
           }
@@ -1103,189 +1103,189 @@
       },
       "ExcedenteEnergiaEnFuncionamientoDto": {
         "required": [
-          "CapacidadProduccion",
-          "CapacidadProduccionEnergia",
-          "ExcedenteEnergia",
-          "TipoEntidad",
-          "TipoTecnologia"
+          "capacidadProduccion",
+          "capacidadProduccionEnergia",
+          "excedenteEnergia",
+          "tipoEntidad",
+          "tipoTecnologia"
         ],
         "type": "object",
         "properties": {
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "format": "tel",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "format": "email",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "type": "string",
             "nullable": true
           },
-          "CapacidadProduccionEnergia": {
+          "capacidadProduccionEnergia": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
-          "ExcedenteEnergia": {
+          "excedenteEnergia": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
-          "HorasExcedenteEnergia": {
+          "horasExcedenteEnergia": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DiasExcedenteEnergia": {
+          "diasExcedenteEnergia": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CapacidadProduccion": {
+          "capacidadProduccion": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32"
           },
-          "ProduceEnergia": {
+          "produceEnergia": {
             "type": "boolean"
           },
-          "FechaInicioProduccion": {
+          "fechaInicioProduccion": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "VierteEnergiaRed": {
+          "vierteEnergiaRed": {
             "type": "boolean"
           },
-          "VierteEnergiaTrue": {
+          "vierteEnergiaTrue": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "Autoconsumo": {
+          "autoconsumo": {
             "type": "boolean"
           },
-          "PaisInstalacion": {
+          "paisInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaInstalacion": {
+          "provinciaInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioInstalacion": {
+          "municipioInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean"
           },
-          "CapacidadProduccionLicencia": {
+          "capacidadProduccionLicencia": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "QuiereProducirConExcedente": {
+          "quiereProducirConExcedente": {
             "type": "boolean"
           },
-          "AlquilarParteOTotalidad": {
+          "alquilarParteOTotalidad": {
             "type": "string",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "maxLength": 1000,
             "minLength": 0,
             "type": "string",
@@ -1296,176 +1296,176 @@
       },
       "ExcedenteEnergiaNuevo": {
         "required": [
-          "TipoEntidad"
+          "tipoEntidad"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "FechaRegistro": {
+          "fechaRegistro": {
             "type": "string",
             "format": "date-time"
           },
-          "Activo": {
+          "activo": {
             "type": "boolean"
           },
-          "InstalacionConstruida": {
+          "instalacionConstruida": {
             "type": "boolean"
           },
-          "InstalacionContruidaFalse": {
+          "instalacionContruidaFalse": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "InstalacionEnConstruccion": {
+          "instalacionEnConstruccion": {
             "type": "boolean"
           },
-          "InstalacionEnConstruccionTrue": {
+          "instalacionEnConstruccionTrue": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "KwTotalesProduccion": {
+          "kwTotalesProduccion": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "type": "string",
             "nullable": true
           },
-          "DestinaInstalacion": {
+          "destinaInstalacion": {
             "type": "boolean"
           },
-          "KwDestinados": {
+          "kwDestinados": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "NumeroHoras": {
+          "numeroHoras": {
             "type": "string",
             "nullable": true
           },
-          "PaisInstalacion": {
+          "paisInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaInstalacion": {
+          "provinciaInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioInstalacion": {
+          "municipioInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean"
           },
-          "CapacidadProduccionLicencia": {
+          "capacidadProduccionLicencia": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "QuierePersonalTramitar": {
+          "quierePersonalTramitar": {
             "type": "boolean"
           },
-          "QuiereProducirConExcedente": {
+          "quiereProducirConExcedente": {
             "type": "boolean"
           },
-          "AlquilarInstalaciones": {
+          "alquilarInstalaciones": {
             "type": "boolean"
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1475,164 +1475,164 @@
       },
       "ExcedenteEnergiaNuevoDto": {
         "required": [
-          "TipoEntidad",
-          "TipoTecnologia"
+          "tipoEntidad",
+          "tipoTecnologia"
         ],
         "type": "object",
         "properties": {
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "InstalacionConstruida": {
+          "instalacionConstruida": {
             "type": "boolean"
           },
-          "InstalacionContruidaFalse": {
+          "instalacionContruidaFalse": {
             "type": "string",
             "nullable": true
           },
-          "InstalacionEnConstruccion": {
+          "instalacionEnConstruccion": {
             "type": "boolean"
           },
-          "InstalacionEnConstruccionTrue": {
+          "instalacionEnConstruccionTrue": {
             "type": "string",
             "nullable": true
           },
-          "KwTotalesProduccion": {
+          "kwTotalesProduccion": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "type": "string",
             "nullable": true
           },
-          "DestinaInstalacion": {
+          "destinaInstalacion": {
             "type": "boolean"
           },
-          "KwDestinados": {
+          "kwDestinados": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "NumeroHoras": {
+          "numeroHoras": {
             "type": "string",
             "nullable": true
           },
-          "PaisInstalacion": {
+          "paisInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaInstalacion": {
+          "provinciaInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioInstalacion": {
+          "municipioInstalacion": {
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean"
           },
-          "CapacidadProduccionLicencia": {
+          "capacidadProduccionLicencia": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "QuierePersonalTramitar": {
+          "quierePersonalTramitar": {
             "type": "boolean"
           },
-          "QuiereProducirConExcedente": {
+          "quiereProducirConExcedente": {
             "type": "boolean"
           },
-          "AlquilarInstalaciones": {
+          "alquilarInstalaciones": {
             "type": "boolean"
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -1642,17 +1642,17 @@
       },
       "LoginDto": {
         "required": [
-          "Email",
-          "Password"
+          "email",
+          "password"
         ],
         "type": "object",
         "properties": {
-          "Email": {
+          "email": {
             "minLength": 1,
             "type": "string",
             "format": "email"
           },
-          "Password": {
+          "password": {
             "minLength": 1,
             "type": "string"
           }
@@ -1661,281 +1661,281 @@
       },
       "ProduccionHidrogeno": {
         "required": [
-          "TipoEntidad",
-          "TipoSectorProduccion",
-          "TipoTecnologia"
+          "tipoEntidad",
+          "tipoSectorProduccion",
+          "tipoTecnologia"
         ],
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "FechaRegistro": {
+          "fechaRegistro": {
             "type": "string",
             "format": "date-time"
           },
-          "Activo": {
+          "activo": {
             "type": "boolean"
           },
-          "InstalacionConstruida": {
+          "instalacionConstruida": {
             "type": "boolean"
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CuantoKiloGramosHora": {
+          "cuantoKiloGramosHora": {
             "type": "integer",
             "format": "int32"
           },
-          "Autoconsumo": {
+          "autoconsumo": {
             "type": "boolean"
           },
-          "TipoSectorProduccion": {
+          "tipoSectorProduccion": {
             "$ref": "#/components/schemas/TipoSectorProduccion"
           },
-          "MovilidadSelect": {
+          "movilidadSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ResidencialSelect": {
+          "residencialSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "IndustrialSelect": {
+          "industrialSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DistribucionSelect": {
+          "distribucionSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "OtroSector": {
+          "otroSector": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisProduccion": {
+          "paisProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaProduccion": {
+          "provinciaProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioProduccion": {
+          "municipioProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisConsumicion": {
+          "paisConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaConsumicion": {
+          "provinciaConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioConsumicion": {
+          "municipioConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MetanolVerde": {
+          "metanolVerde": {
             "type": "boolean"
           },
-          "EquiposProducir": {
+          "equiposProducir": {
             "type": "boolean"
           },
-          "EquiposAlmacenar": {
+          "equiposAlmacenar": {
             "type": "boolean"
           },
-          "OtraTecnologia": {
+          "otraTecnologia": {
             "type": "boolean"
           },
-          "IndicarCual": {
+          "indicarCual": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NecesitaEmpresa": {
+          "necesitaEmpresa": {
             "type": "boolean"
           },
-          "PaisNecesita": {
+          "paisNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaNecesita": {
+          "provinciaNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioNecesita": {
+          "municipioNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "BaresHidrogeno": {
+          "baresHidrogeno": {
             "type": "integer",
             "format": "int32"
           },
-          "AlquilarTerrenoSinInstalaciones": {
+          "alquilarTerrenoSinInstalaciones": {
             "type": "boolean"
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "type": "integer",
             "format": "int32"
           },
-          "AlquilarTerrenoConInstalaciones": {
+          "alquilarTerrenoConInstalaciones": {
             "type": "boolean"
           },
-          "TipoTecnologiaAlquiler": {
+          "tipoTecnologiaAlquiler": {
             "$ref": "#/components/schemas/TipoTecnologiaNullable"
           },
-          "OtrasTecnologiasAlquiler": {
+          "otrasTecnologiasAlquiler": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ContratarPPA": {
+          "contratarPPA": {
             "type": "boolean"
           },
-          "AyudaProveedorPPA": {
+          "ayudaProveedorPPA": {
             "type": "boolean"
           },
-          "ProporcionClientes": {
+          "proporcionClientes": {
             "type": "boolean"
           },
-          "RedEmpresas": {
+          "redEmpresas": {
             "type": "boolean"
           },
-          "RedHidrogeneras": {
+          "redHidrogeneras": {
             "type": "boolean"
           },
-          "RedPuntosDispensacion": {
+          "redPuntosDispensacion": {
             "type": "boolean"
           },
-          "TramitacionSolicitudes": {
+          "tramitacionSolicitudes": {
             "type": "boolean"
           },
-          "FechaHidrogenoDisponible": {
+          "fechaHidrogenoDisponible": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "maxLength": 2000,
             "minLength": 0,
             "type": "string",
@@ -1946,278 +1946,278 @@
       },
       "ProduccionHidrogenoDto": {
         "required": [
-          "TipoEntidad",
-          "TipoSectorProduccion",
-          "TipoTecnologia"
+          "tipoEntidad",
+          "tipoSectorProduccion",
+          "tipoTecnologia"
         ],
         "type": "object",
         "properties": {
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "format": "tel",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "format": "email",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "InstalacionConstruida": {
+          "instalacionConstruida": {
             "type": "boolean"
           },
-          "TipoTecnologia": {
+          "tipoTecnologia": {
             "$ref": "#/components/schemas/TipoTecnologia"
           },
-          "OtrasTecnologias": {
+          "otrasTecnologias": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CuantoKiloGramosHora": {
+          "cuantoKiloGramosHora": {
             "maximum": 2147483647,
             "minimum": 0,
             "type": "integer",
             "format": "int32"
           },
-          "Autoconsumo": {
+          "autoconsumo": {
             "type": "boolean"
           },
-          "TipoSectorProduccion": {
+          "tipoSectorProduccion": {
             "$ref": "#/components/schemas/TipoSectorProduccion"
           },
-          "MovilidadSelect": {
+          "movilidadSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ResidencialSelect": {
+          "residencialSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "IndustrialSelect": {
+          "industrialSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DistribucionSelect": {
+          "distribucionSelect": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "OtroSector": {
+          "otroSector": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisProduccion": {
+          "paisProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaProduccion": {
+          "provinciaProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioProduccion": {
+          "municipioProduccion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisConsumicion": {
+          "paisConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaConsumicion": {
+          "provinciaConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioConsumicion": {
+          "municipioConsumicion": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MetanolVerde": {
+          "metanolVerde": {
             "type": "boolean"
           },
-          "EquiposProducir": {
+          "equiposProducir": {
             "type": "boolean"
           },
-          "EquiposAlmacenar": {
+          "equiposAlmacenar": {
             "type": "boolean"
           },
-          "OtraTecnologia": {
+          "otraTecnologia": {
             "type": "boolean"
           },
-          "IndicarCual": {
+          "indicarCual": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NecesitaEmpresa": {
+          "necesitaEmpresa": {
             "type": "boolean"
           },
-          "PaisNecesita": {
+          "paisNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaNecesita": {
+          "provinciaNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioNecesita": {
+          "municipioNecesita": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "BaresHidrogeno": {
+          "baresHidrogeno": {
             "maximum": 2000,
             "minimum": 0,
             "type": "integer",
             "format": "int32"
           },
-          "AlquilarTerrenoSinInstalaciones": {
+          "alquilarTerrenoSinInstalaciones": {
             "type": "boolean"
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "maximum": 100,
             "minimum": 0,
             "type": "integer",
             "format": "int32"
           },
-          "AlquilarTerrenoConInstalaciones": {
+          "alquilarTerrenoConInstalaciones": {
             "type": "boolean"
           },
-          "TipoTecnologiaAlquiler": {
+          "tipoTecnologiaAlquiler": {
             "$ref": "#/components/schemas/TipoTecnologiaNullable"
           },
-          "OtrasTecnologiasAlquiler": {
+          "otrasTecnologiasAlquiler": {
             "maxLength": 500,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ContratarPPA": {
+          "contratarPPA": {
             "type": "boolean"
           },
-          "AyudaProveedorPPA": {
+          "ayudaProveedorPPA": {
             "type": "boolean"
           },
-          "ProporcionClientes": {
+          "proporcionClientes": {
             "type": "boolean"
           },
-          "RedEmpresas": {
+          "redEmpresas": {
             "type": "boolean"
           },
-          "RedHidrogeneras": {
+          "redHidrogeneras": {
             "type": "boolean"
           },
-          "RedPuntosDispensacion": {
+          "redPuntosDispensacion": {
             "type": "boolean"
           },
-          "TramitacionSolicitudes": {
+          "tramitacionSolicitudes": {
             "type": "boolean"
           },
-          "FechaHidrogenoDisponible": {
+          "fechaHidrogenoDisponible": {
             "type": "string",
             "format": "date",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "maxLength": 2000,
             "minLength": 0,
             "type": "string",
@@ -2228,23 +2228,23 @@
       },
       "RegisterDto": {
         "required": [
-          "Email",
-          "Password",
-          "Username"
+          "email",
+          "password",
+          "username"
         ],
         "type": "object",
         "properties": {
-          "Username": {
+          "username": {
             "maxLength": 50,
             "minLength": 0,
             "type": "string"
           },
-          "Email": {
+          "email": {
             "minLength": 1,
             "type": "string",
             "format": "email"
           },
-          "Password": {
+          "password": {
             "minLength": 6,
             "type": "string"
           }
@@ -2309,153 +2309,153 @@
       "TransporteHidrogeno": {
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "FechaRegistro": {
+          "fechaRegistro": {
             "type": "string",
             "format": "date-time"
           },
-          "Activo": {
+          "activo": {
             "type": "boolean"
           },
-          "LicenciaMercanciaPeligrosa": {
+          "licenciaMercanciaPeligrosa": {
             "type": "boolean"
           },
-          "FalseLicenciaAsesoramiento": {
+          "falseLicenciaAsesoramiento": {
             "type": "boolean"
           },
-          "TipoTransporte": {
+          "tipoTransporte": {
             "$ref": "#/components/schemas/TipoTransporte"
           },
-          "TieneCaminonesHidrogeno": {
+          "tieneCaminonesHidrogeno": {
             "type": "boolean"
           },
-          "TieneCamionesMetanol": {
+          "tieneCamionesMetanol": {
             "type": "boolean"
           },
-          "TieneCamionesAmoniaco": {
+          "tieneCamionesAmoniaco": {
             "type": "boolean"
           },
-          "RedTransporte": {
+          "redTransporte": {
             "type": "boolean"
           },
-          "TipoRed": {
+          "tipoRed": {
             "type": "string",
             "nullable": true
           },
-          "TipoTransporteHidrogeno": {
+          "tipoTransporteHidrogeno": {
             "type": "string",
             "nullable": true
           },
-          "PresionHidrogeno": {
+          "presionHidrogeno": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioTransporte": {
+          "municipioTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaTransporte": {
+          "provinciaTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisTransporte": {
+          "paisTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NecesitaFormacion": {
+          "necesitaFormacion": {
             "type": "boolean"
           },
-          "Observaciones": {
+          "observaciones": {
             "type": "string",
             "nullable": true
           }
@@ -2464,148 +2464,148 @@
       },
       "TransporteHidrogenoDto": {
         "required": [
-          "TipoEntidad",
-          "TipoTransporte"
+          "tipoEntidad",
+          "tipoTransporte"
         ],
         "type": "object",
         "properties": {
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "format": "email",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "LicenciaMercanciaPeligrosa": {
+          "licenciaMercanciaPeligrosa": {
             "type": "boolean"
           },
-          "FalseLicenciaAsesoramiento": {
+          "falseLicenciaAsesoramiento": {
             "type": "boolean"
           },
-          "TipoTransporte": {
+          "tipoTransporte": {
             "$ref": "#/components/schemas/TipoTransporte"
           },
-          "TieneCaminonesHidrogeno": {
+          "tieneCaminonesHidrogeno": {
             "type": "boolean"
           },
-          "TieneCamionesMetanol": {
+          "tieneCamionesMetanol": {
             "type": "boolean"
           },
-          "TieneCamionesAmoniaco": {
+          "tieneCamionesAmoniaco": {
             "type": "boolean"
           },
-          "RedTransporte": {
+          "redTransporte": {
             "type": "boolean"
           },
-          "TipoRed": {
+          "tipoRed": {
             "type": "string",
             "nullable": true
           },
-          "TipoTransporteHidrogeno": {
+          "tipoTransporteHidrogeno": {
             "type": "string",
             "nullable": true
           },
-          "PresionHidrogeno": {
+          "presionHidrogeno": {
             "type": "string",
             "nullable": true
           },
-          "MunicipioTransporte": {
+          "municipioTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ProvinciaTransporte": {
+          "provinciaTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "PaisTransporte": {
+          "paisTransporte": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NecesitaFormacion": {
+          "necesitaFormacion": {
             "type": "boolean"
           },
-          "Observaciones": {
+          "observaciones": {
             "type": "string",
             "nullable": true
           }
@@ -2615,152 +2615,152 @@
       "VendeAlquilaHidrogeno": {
         "type": "object",
         "properties": {
-          "Id": {
+          "id": {
             "type": "integer",
             "format": "int32"
           },
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "FechaRegistro": {
+          "fechaRegistro": {
             "type": "string",
             "format": "date-time"
           },
-          "Activo": {
+          "activo": {
             "type": "boolean"
           },
-          "MetrosCuadradosTerreno": {
+          "metrosCuadradosTerreno": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "TipoTerreno": {
+          "tipoTerreno": {
             "$ref": "#/components/schemas/TipoTerreno"
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean",
             "nullable": true
           },
-          "Licencia": {
+          "licencia": {
             "type": "string",
             "nullable": true
           },
-          "VenderAlquilar": {
+          "venderAlquilar": {
             "type": "string",
             "nullable": true
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "PrecioAlquiler": {
+          "precioAlquiler": {
             "type": "integer",
             "format": "int32"
           },
-          "PrecioVenta": {
+          "precioVenta": {
             "type": "integer",
             "format": "int32"
           },
-          "PaisAlVen": {
+          "paisAlVen": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaAlVen": {
+          "provinciaAlVen": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioAlVen": {
+          "municipioAlVen": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "type": "string",
             "nullable": true
           }
@@ -2769,155 +2769,155 @@
       },
       "VendeAlquilaHidrogenoDto": {
         "required": [
-          "TipoEntidad",
-          "TipoTerreno"
+          "tipoEntidad",
+          "tipoTerreno"
         ],
         "type": "object",
         "properties": {
-          "TipoEntidad": {
+          "tipoEntidad": {
             "$ref": "#/components/schemas/TipoEntidad"
           },
-          "Nombre": {
+          "nombre": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Apellidos": {
+          "apellidos": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Empresa": {
+          "empresa": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "CIF": {
+          "cif": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "DNI": {
+          "dni": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Representante": {
+          "representante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "NombreRepresentante": {
+          "nombreRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "ApellidosRepresentante": {
+          "apellidosRepresentante": {
             "maxLength": 200,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Telefono": {
+          "telefono": {
             "maxLength": 20,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Email": {
+          "email": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "format": "email",
             "nullable": true
           },
-          "Municipio": {
+          "municipio": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Provincia": {
+          "provincia": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Pais": {
+          "pais": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MetrosCuadradosTerreno": {
+          "metrosCuadradosTerreno": {
             "maximum": 2147483647,
             "minimum": 1,
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "TipoTerreno": {
+          "tipoTerreno": {
             "$ref": "#/components/schemas/TipoTerreno"
           },
-          "TieneLicencia": {
+          "tieneLicencia": {
             "type": "boolean",
             "nullable": true
           },
-          "Licencia": {
+          "licencia": {
             "type": "string",
             "nullable": true
           },
-          "VenderAlquilar": {
+          "venderAlquilar": {
             "type": "string",
             "nullable": true
           },
-          "AnosAlquiler": {
+          "anosAlquiler": {
             "maximum": 99,
             "minimum": 1,
             "type": "integer",
             "format": "int32",
             "nullable": true
           },
-          "PrecioAlquiler": {
+          "precioAlquiler": {
             "maximum": 2147483647,
             "minimum": 0,
             "type": "integer",
             "format": "int32"
           },
-          "PrecioVenta": {
+          "precioVenta": {
             "maximum": 2147483647,
             "minimum": 0,
             "type": "integer",
             "format": "int32"
           },
-          "PaisAlVen": {
+          "paisAlVen": {
             "type": "string",
             "nullable": true
           },
-          "ProvinciaAlVen": {
+          "provinciaAlVen": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "MunicipioAlVen": {
+          "municipioAlVen": {
             "maxLength": 100,
             "minLength": 0,
             "type": "string",
             "nullable": true
           },
-          "Coordenadas": {
+          "coordenadas": {
             "type": "string",
             "nullable": true
           },
-          "Observaciones": {
+          "observaciones": {
             "type": "string",
             "nullable": true
           }
