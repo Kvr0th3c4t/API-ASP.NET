@@ -163,7 +163,6 @@ C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\staticwebassets\msbuild.b
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.BlogSystem.API.props
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.BlogSystem.API.props
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\BlogSyst.CB3F3FA9.Up2Date
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\BlogSystem.API.dll
 C:\Users\paula\Desktop\BlogSystem.API\obj\Debug\net9.0\refint\BlogSystem.API.dll
