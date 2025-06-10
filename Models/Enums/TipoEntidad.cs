@@ -5,7 +5,7 @@ namespace BlogSystem.API.Models.Enums
 {
     public enum TipoEntidad
     {
-        EMPRESA,
-        PARTICULAR
+        Empresa,
+        Particular
     }
 }

@@ -199,26 +199,6 @@
   },
   {
     "ContainingType": "BlogSystem.API.Controllers.FormularioController",
-    "Method": "GetExcedentesEnergiaFuncionamiento",
-    "RelativePath": "api/Formulario/excedente-energia-funcionamiento",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BlogSystem.API.Models.ExcedenteEnergiaEnFuncionamiento, BlogSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
     "Method": "GetExcedenteEnergiaFuncionamiento",
     "RelativePath": "api/Formulario/excedente-energia-funcionamiento/{id}",
     "HttpMethod": "GET",
@@ -260,26 +240,6 @@
     "ReturnTypes": [
       {
         "Type": "BlogSystem.API.Models.ExcedenteEnergiaNuevo",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
-    "Method": "GetExcedentesEnergiaNuevo",
-    "RelativePath": "api/Formulario/excedente-energia-nuevo",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BlogSystem.API.Models.ExcedenteEnergiaNuevo, BlogSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -369,26 +329,6 @@
   },
   {
     "ContainingType": "BlogSystem.API.Controllers.FormularioController",
-    "Method": "GetTransportesHidrogeno",
-    "RelativePath": "api/Formulario/transporte-hidrogeno",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BlogSystem.API.Models.TransporteHidrogeno, BlogSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
     "Method": "GetTransporteHidrogeno",
     "RelativePath": "api/Formulario/transporte-hidrogeno/{id}",
     "HttpMethod": "GET",
@@ -430,26 +370,6 @@
     "ReturnTypes": [
       {
         "Type": "BlogSystem.API.Models.VendeAlquilaHidrogeno",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BlogSystem.API.Controllers.FormularioController",
-    "Method": "GetVentaAlquilerHidrogeno",
-    "RelativePath": "api/Formulario/vende-alquila-hidrogeno",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BlogSystem.API.Models.VendeAlquilaHidrogeno, BlogSystem.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

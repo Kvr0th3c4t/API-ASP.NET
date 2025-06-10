@@ -86,26 +86,11 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Activo")
-                        .HasColumnType("bit");
-
                     b.Property<string>("AlquilarParteOTotalidad")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Apellidos")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ApellidosRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<bool>("Autoconsumo")
                         .HasColumnType("bit");
-
-                    b.Property<string>("CIF")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int>("CapacidadProduccion")
                         .HasColumnType("int");
@@ -119,21 +104,9 @@ namespace BlogSystem.API.Migrations
                     b.Property<string>("Coordenadas")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DNI")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("DiasExcedenteEnergia")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Empresa")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("ExcedenteEnergia")
                         .HasColumnType("int");
@@ -141,27 +114,12 @@ namespace BlogSystem.API.Migrations
                     b.Property<DateOnly?>("FechaInicioProduccion")
                         .HasColumnType("date");
 
-                    b.Property<DateTime>("FechaRegistro")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("HorasExcedenteEnergia")
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("Municipio")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("MunicipioInstalacion")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NombreRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Observaciones")
                         .HasColumnType("nvarchar(max)");
@@ -169,19 +127,11 @@ namespace BlogSystem.API.Migrations
                     b.Property<string>("OtrasTecnologias")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Pais")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("PaisInstalacion")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("ProduceEnergia")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Provincia")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ProvinciaInstalacion")
                         .HasColumnType("nvarchar(max)");
@@ -189,20 +139,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<bool>("QuiereProducirConExcedente")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Representante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("TieneLicencia")
                         .HasColumnType("bit");
-
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoTecnologia")
                         .IsRequired()
@@ -227,26 +165,11 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Activo")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("AlquilarInstalaciones")
                         .HasColumnType("bit");
 
                     b.Property<int?>("AnosAlquiler")
                         .HasColumnType("int");
-
-                    b.Property<string>("Apellidos")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ApellidosRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("CIF")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int?>("CapacidadProduccionLicencia")
                         .HasColumnType("int");
@@ -254,23 +177,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<string>("Coordenadas")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DNI")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("DestinaInstalacion")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Empresa")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("FechaRegistro")
-                        .HasColumnType("datetime2");
 
                     b.Property<bool>("InstalacionConstruida")
                         .HasColumnType("bit");
@@ -290,20 +198,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<int?>("KwTotalesProduccion")
                         .HasColumnType("int");
 
-                    b.Property<string>("Municipio")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("MunicipioInstalacion")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Nombre")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NombreRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("NumeroHoras")
                         .HasColumnType("nvarchar(max)");
@@ -311,16 +207,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<string>("OtrasTecnologias")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Pais")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("PaisInstalacion")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Provincia")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ProvinciaInstalacion")
                         .HasColumnType("nvarchar(max)");
@@ -331,20 +219,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<bool>("QuiereProducirConExcedente")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Representante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("TieneLicencia")
                         .HasColumnType("bit");
-
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoTecnologia")
                         .IsRequired()
@@ -363,9 +239,6 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Activo")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("AlquilarTerrenoConInstalaciones")
                         .HasColumnType("bit");
 
@@ -374,14 +247,6 @@ namespace BlogSystem.API.Migrations
 
                     b.Property<int>("AnosAlquiler")
                         .HasColumnType("int");
-
-                    b.Property<string>("Apellidos")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ApellidosRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
 
                     b.Property<bool>("Autoconsumo")
                         .HasColumnType("bit");
@@ -392,29 +257,13 @@ namespace BlogSystem.API.Migrations
                     b.Property<int>("BaresHidrogeno")
                         .HasColumnType("int");
 
-                    b.Property<string>("CIF")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool>("ContratarPPA")
                         .HasColumnType("bit");
 
                     b.Property<int>("CuantoKiloGramosHora")
                         .HasColumnType("int");
 
-                    b.Property<string>("DNI")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("DistribucionSelect")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Empresa")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
@@ -426,9 +275,6 @@ namespace BlogSystem.API.Migrations
 
                     b.Property<DateOnly?>("FechaHidrogenoDisponible")
                         .HasColumnType("date");
-
-                    b.Property<DateTime>("FechaRegistro")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("IndicarCual")
                         .HasMaxLength(500)
@@ -448,10 +294,6 @@ namespace BlogSystem.API.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Municipio")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("MunicipioConsumicion")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -466,14 +308,6 @@ namespace BlogSystem.API.Migrations
 
                     b.Property<bool>("NecesitaEmpresa")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Nombre")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NombreRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Observaciones")
                         .HasMaxLength(2000)
@@ -494,10 +328,6 @@ namespace BlogSystem.API.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<string>("Pais")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("PaisConsumicion")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -512,10 +342,6 @@ namespace BlogSystem.API.Migrations
 
                     b.Property<bool>("ProporcionClientes")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Provincia")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ProvinciaConsumicion")
                         .HasMaxLength(100)
@@ -538,21 +364,9 @@ namespace BlogSystem.API.Migrations
                     b.Property<bool>("RedPuntosDispensacion")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Representante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<string>("ResidencialSelect")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoSectorProduccion")
                         .IsRequired()
@@ -581,45 +395,11 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Activo")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Apellidos")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ApellidosRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("CIF")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("DNI")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Empresa")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<bool>("FalseLicenciaAsesoramiento")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("FechaRegistro")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("LicenciaMercanciaPeligrosa")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Municipio")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("MunicipioTransporte")
                         .HasMaxLength(100)
@@ -628,20 +408,8 @@ namespace BlogSystem.API.Migrations
                     b.Property<bool>("NecesitaFormacion")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Nombre")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NombreRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<string>("Observaciones")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pais")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PaisTransporte")
                         .HasMaxLength(100)
@@ -650,24 +418,12 @@ namespace BlogSystem.API.Migrations
                     b.Property<string>("PresionHidrogeno")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Provincia")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("ProvinciaTransporte")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<bool>("RedTransporte")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Representante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("TieneCaminonesHidrogeno")
                         .HasColumnType("bit");
@@ -677,10 +433,6 @@ namespace BlogSystem.API.Migrations
 
                     b.Property<bool>("TieneCamionesMetanol")
                         .HasColumnType("bit");
-
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoRed")
                         .HasColumnType("nvarchar(max)");
@@ -705,11 +457,53 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<bool>("Activo")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Apellidos")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ApellidosRepresentante")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("CIF")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("DNI")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<string>("Email")
                         .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Empresa")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("FechaRegistro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Municipio")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Nombre")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NombreRepresentante")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("Pais")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
@@ -717,15 +511,29 @@ namespace BlogSystem.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Provincia")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Representante")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
                     b.Property<string>("Role")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<string>("Telefono")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("TipoEntidad")
+                        .HasColumnType("int");
+
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -746,41 +554,11 @@ namespace BlogSystem.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Activo")
-                        .HasColumnType("bit");
-
                     b.Property<int?>("AnosAlquiler")
                         .HasColumnType("int");
 
-                    b.Property<string>("Apellidos")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ApellidosRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("CIF")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<string>("Coordenadas")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DNI")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Empresa")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<DateTime>("FechaRegistro")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Licencia")
                         .HasColumnType("nvarchar(max)");
@@ -788,28 +566,12 @@ namespace BlogSystem.API.Migrations
                     b.Property<int?>("MetrosCuadradosTerreno")
                         .HasColumnType("int");
 
-                    b.Property<string>("Municipio")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("MunicipioAlVen")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Nombre")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("NombreRepresentante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
                     b.Property<string>("Observaciones")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pais")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("PaisAlVen")
                         .HasColumnType("nvarchar(max)");
@@ -820,28 +582,12 @@ namespace BlogSystem.API.Migrations
                     b.Property<int>("PrecioVenta")
                         .HasColumnType("int");
 
-                    b.Property<string>("Provincia")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("ProvinciaAlVen")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Representante")
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
                     b.Property<bool?>("TieneLicencia")
                         .HasColumnType("bit");
-
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoTerreno")
                         .IsRequired()

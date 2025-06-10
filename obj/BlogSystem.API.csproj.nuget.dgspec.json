@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\paula\\Desktop\\BlogSystem.API\\BlogSystem.API.csproj": {}
+    "C:\\Users\\Adria\\OneDrive\\Escritorio\\API-ASP.NET\\BlogSystem.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\paula\\Desktop\\BlogSystem.API\\BlogSystem.API.csproj": {
+    "C:\\Users\\Adria\\OneDrive\\Escritorio\\API-ASP.NET\\BlogSystem.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\paula\\Desktop\\BlogSystem.API\\BlogSystem.API.csproj",
+        "projectUniqueName": "C:\\Users\\Adria\\OneDrive\\Escritorio\\API-ASP.NET\\BlogSystem.API.csproj",
         "projectName": "BlogSystem.API",
-        "projectPath": "C:\\Users\\paula\\Desktop\\BlogSystem.API\\BlogSystem.API.csproj",
-        "packagesPath": "C:\\Users\\paula\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\paula\\Desktop\\BlogSystem.API\\obj\\",
+        "projectPath": "C:\\Users\\Adria\\OneDrive\\Escritorio\\API-ASP.NET\\BlogSystem.API.csproj",
+        "packagesPath": "C:\\Users\\Adria\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Adria\\OneDrive\\Escritorio\\API-ASP.NET\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paula\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

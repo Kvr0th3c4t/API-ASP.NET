@@ -30,23 +30,7 @@ namespace BlogSystem.API.Controllers
             {
                 var excedente = new ExcedenteEnergiaNuevo
                 {
-                    // SECCIÓN DE REGISTRO
-                    TipoEntidad = dto.TipoEntidad,
-                    Nombre = dto.Nombre,
-                    Apellidos = dto.Apellidos,
-                    Empresa = dto.Empresa,
-                    CIF = dto.CIF,
-                    DNI = dto.DNI,
-                    Representante = dto.Representante,
-                    NombreRepresentante = dto.NombreRepresentante,
-                    ApellidosRepresentante = dto.ApellidosRepresentante,
-                    Telefono = dto.Telefono,
-                    Email = dto.Email,
-                    Municipio = dto.Municipio,
-                    Provincia = dto.Provincia,
-                    Pais = dto.Pais,
-                    FechaRegistro = DateTime.UtcNow,
-                    Activo = true,
+                  
 
                     // FORMULARIO ENERGIA
                     InstalacionConstruida = dto.InstalacionConstruida,
@@ -107,23 +91,7 @@ namespace BlogSystem.API.Controllers
             {
                 var produccionHidrogeno = new ProduccionHidrogeno
                 {
-                    // SECCIÓN DE REGISTRO
-                    TipoEntidad = dto.TipoEntidad,
-                    Nombre = dto.Nombre,
-                    Apellidos = dto.Apellidos,
-                    Empresa = dto.Empresa,
-                    CIF = dto.CIF,
-                    DNI = dto.DNI,
-                    Representante = dto.Representante,
-                    NombreRepresentante = dto.NombreRepresentante,
-                    ApellidosRepresentante = dto.ApellidosRepresentante,
-                    Telefono = dto.Telefono,
-                    Email = dto.Email,
-                    Municipio = dto.Municipio,
-                    Provincia = dto.Provincia,
-                    Pais = dto.Pais,
-                    FechaRegistro = DateTime.UtcNow,
-                    Activo = true,
+              
 
                     // FORMULARIO PRODUCCIÓN HIDRÓGENO
                     InstalacionConstruida = dto.InstalacionConstruida,
@@ -207,11 +175,7 @@ namespace BlogSystem.API.Controllers
             return excedente;
         }
 
-        [HttpGet("excedente-energia-nuevo")]
-        public async Task<ActionResult<IEnumerable<ExcedenteEnergiaNuevo>>> GetExcedentesEnergiaNuevo()
-        {
-            return await _context.ExcedentesEnergiaNuevo.Where(x => x.Activo).ToListAsync();
-        }
+       
 
 
         [HttpPost("excedente-energia-funcionamiento")]
@@ -226,23 +190,7 @@ namespace BlogSystem.API.Controllers
             {
                 var excedenteEnFuncionamiento = new ExcedenteEnergiaEnFuncionamiento
                 {
-                    // SECCIÓN DE REGISTRO
-                    TipoEntidad = dto.TipoEntidad,
-                    Nombre = dto.Nombre,
-                    Apellidos = dto.Apellidos,
-                    Empresa = dto.Empresa,
-                    CIF = dto.CIF,
-                    DNI = dto.DNI,
-                    Representante = dto.Representante,
-                    NombreRepresentante = dto.NombreRepresentante,
-                    ApellidosRepresentante = dto.ApellidosRepresentante,
-                    Telefono = dto.Telefono,
-                    Email = dto.Email,
-                    Municipio = dto.Municipio,
-                    Provincia = dto.Provincia,
-                    Pais = dto.Pais,
-                    FechaRegistro = DateTime.UtcNow,
-                    Activo = true,
+                    
 
                     // FORMULARIO ENERGIA EN FUNCIONAMIENTO
                     TipoTecnologia = dto.TipoTecnologia,
@@ -294,11 +242,7 @@ namespace BlogSystem.API.Controllers
             return excedenteEnFuncionamiento;
         }
 
-        [HttpGet("excedente-energia-funcionamiento")]
-        public async Task<ActionResult<IEnumerable<ExcedenteEnergiaEnFuncionamiento>>> GetExcedentesEnergiaFuncionamiento()
-        {
-            return await _context.ExcedentesEnergiaEnFuncionamiento.Where(x => x.Activo).ToListAsync();
-        }
+        
 
         [HttpPost("vende-alquila-hidrogeno")]
         public async Task<ActionResult<VendeAlquilaHidrogeno>> PostVendeAlquilaHidrogeno(VendeAlquilaHidrogenoDto dto)
@@ -312,23 +256,7 @@ namespace BlogSystem.API.Controllers
             {
                 var vendeAlquila = new VendeAlquilaHidrogeno
                 {
-                    // SECCIÓN DE REGISTRO
-                    TipoEntidad = dto.TipoEntidad,
-                    Nombre = dto.Nombre,
-                    Apellidos = dto.Apellidos,
-                    Empresa = dto.Empresa,
-                    CIF = dto.CIF,
-                    DNI = dto.DNI,
-                    Representante = dto.Representante,
-                    NombreRepresentante = dto.NombreRepresentante,
-                    ApellidosRepresentante = dto.ApellidosRepresentante,
-                    Telefono = dto.Telefono,
-                    Email = dto.Email,
-                    Municipio = dto.Municipio,
-                    Provincia = dto.Provincia,
-                    Pais = dto.Pais,
-                    FechaRegistro = DateTime.UtcNow,
-                    Activo = true,
+                    
 
                     // FORMULARIO VENTA/ALQUILER HIDRÓGENO
                     MetrosCuadradosTerreno = dto.MetrosCuadradosTerreno,
@@ -370,11 +298,7 @@ namespace BlogSystem.API.Controllers
             return vendeAlquila;
         }
 
-        [HttpGet("vende-alquila-hidrogeno")]
-        public async Task<ActionResult<IEnumerable<VendeAlquilaHidrogeno>>> GetVentaAlquilerHidrogeno()
-        {
-            return await _context.VentaAlquilerHidrogeno.Where(x => x.Activo).ToListAsync();
-        }
+        
 
         [HttpPost("transporte-hidrogeno")]
         public async Task<ActionResult<TransporteHidrogeno>> PostTransporteHidrogeno(TransporteHidrogenoDto dto)
@@ -388,23 +312,7 @@ namespace BlogSystem.API.Controllers
             {
                 var transporte = new TransporteHidrogeno
                 {
-                    // SECCIÓN DE REGISTRO
-                    TipoEntidad = dto.TipoEntidad,
-                    Nombre = dto.Nombre,
-                    Apellidos = dto.Apellidos,
-                    Empresa = dto.Empresa,
-                    CIF = dto.CIF,
-                    DNI = dto.DNI,
-                    Representante = dto.Representante,
-                    NombreRepresentante = dto.NombreRepresentante,
-                    ApellidosRepresentante = dto.ApellidosRepresentante,
-                    Telefono = dto.Telefono,
-                    Email = dto.Email,
-                    Municipio = dto.Municipio,
-                    Provincia = dto.Provincia,
-                    Pais = dto.Pais,
-                    FechaRegistro = DateTime.UtcNow,
-                    Activo = true,
+                    
 
                     // FORMULARIO TRANSPORTE HIDRÓGENO
                     LicenciaMercanciaPeligrosa = dto.LicenciaMercanciaPeligrosa,
@@ -448,11 +356,7 @@ namespace BlogSystem.API.Controllers
             return transporte;
         }
 
-        [HttpGet("transporte-hidrogeno")]
-        public async Task<ActionResult<IEnumerable<TransporteHidrogeno>>> GetTransportesHidrogeno()
-        {
-            return await _context.TransportesHidrogeno.Where(x => x.Activo).ToListAsync();
-        }
+        
 
         //RUTAS PARA EL 'CHATBOT' DE CONTACTA
         [HttpPost("contacto-form")]
