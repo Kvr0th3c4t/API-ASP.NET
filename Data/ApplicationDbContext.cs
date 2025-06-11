@@ -31,34 +31,34 @@ namespace BlogSystem.API.Data
                 .HasForeignKey(bp => bp.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // AGREGAR: Configurar relaciones para formularios
+            // ACTUALIZADO: Configurar relaciones para formularios con navegación correcta
             modelBuilder.Entity<ExcedenteEnergiaNuevo>()
                 .HasOne(e => e.User)
-                .WithMany()
+                .WithMany(u => u.ExcedentesEnergiaNuevo)
                 .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ExcedenteEnergiaEnFuncionamiento>()
                 .HasOne(e => e.User)
-                .WithMany()
+                .WithMany(u => u.ExcedentesEnergiaFuncionamiento)
                 .HasForeignKey(e => e.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<ProduccionHidrogeno>()
                 .HasOne(p => p.User)
-                .WithMany()
+                .WithMany(u => u.ProduccionesHidrogeno)
                 .HasForeignKey(p => p.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<TransporteHidrogeno>()
                 .HasOne(t => t.User)
-                .WithMany()
+                .WithMany(u => u.TransportesHidrogeno)
                 .HasForeignKey(t => t.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<VendeAlquilaHidrogeno>()
                 .HasOne(v => v.User)
-                .WithMany()
+                .WithMany(u => u.VentaAlquilerHidrogeno)
                 .HasForeignKey(v => v.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
@@ -72,6 +72,11 @@ namespace BlogSystem.API.Data
                 .IsUnique();
 
             // Configuraciones de enums existentes (sin cambios)
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.TipoEntidad).HasConversion<string>();
+            });
+
             modelBuilder.Entity<ExcedenteEnergiaNuevo>(entity =>
             {
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();

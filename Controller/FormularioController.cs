@@ -351,7 +351,7 @@ namespace BlogSystem.API.Controllers
             return excedente;
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("produccion-hidrogeno/{id}")]
         public async Task<ActionResult<ProduccionHidrogeno>> GetProduccionHidrogeno(int id)
         {
             var userId = GetCurrentUserId();
