@@ -50,21 +50,18 @@ namespace BlogSystem.API.Data
             // Configuración para ExcedenteEnergiaNuevo
             modelBuilder.Entity<ExcedenteEnergiaNuevo>(entity =>
             {
-                entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
             });
 
             // Configuración para ExcedenteEnergiaEnFuncionamiento  
             modelBuilder.Entity<ExcedenteEnergiaEnFuncionamiento>(entity =>
             {
-                entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
             });
 
             // Configuración para ProduccionHidrogeno
             modelBuilder.Entity<ProduccionHidrogeno>(entity =>
             {
-                entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
                 entity.Property(e => e.TipoSectorProduccion).HasConversion<string>();
                 entity.Property(e => e.TipoTecnologiaAlquiler).HasConversion<string>();
@@ -73,13 +70,11 @@ namespace BlogSystem.API.Data
             // Configuración para VendeAlquilaHidrogeno
             modelBuilder.Entity<VendeAlquilaHidrogeno>(entity =>
             {
-                entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTerreno).HasConversion<string>();
             });
 
             modelBuilder.Entity<TransporteHidrogeno>(entity =>
             {
-                entity.Property(e => e.TipoEntidad).HasConversion<string>();
                 entity.Property(e => e.TipoTransporte).HasConversion<string>();
             });
         }
