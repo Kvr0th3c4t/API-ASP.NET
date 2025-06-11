@@ -1,5 +1,6 @@
 ﻿using BlogSystem.API.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogSystem.API.Models
 {
@@ -8,7 +9,15 @@ namespace BlogSystem.API.Models
         [Key]
         public int Id { get; set; }
 
-        //FORMULARIO ENERGIA
+        // AGREGAR: Foreign key hacia User
+        [Required]
+        public int UserId { get; set; }
+
+        // AGREGAR: Navigation property hacia User
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        //FORMULARIO ENERGIA (tu código existente sin cambios)
         public bool InstalacionConstruida { get; set; } //Si es NO, hay que pedir la fecha de cuando se construirá la instalación.
         public DateOnly? InstalacionContruidaFalse { get; set; } //Si es no se completa esta opción.
         public bool InstalacionEnConstruccion { get; set; } //Si es SI, se indica fecha

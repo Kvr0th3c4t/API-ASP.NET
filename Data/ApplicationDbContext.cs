@@ -24,11 +24,42 @@ namespace BlogSystem.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configurar relaciones
+            // Configurar relaciones existentes
             modelBuilder.Entity<BlogPost>()
                 .HasOne(bp => bp.User)
                 .WithMany(u => u.BlogPosts)
                 .HasForeignKey(bp => bp.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // ACTUALIZADO: Configurar relaciones para formularios con navegación correcta
+            modelBuilder.Entity<ExcedenteEnergiaNuevo>()
+                .HasOne(e => e.User)
+                .WithMany(u => u.ExcedentesEnergiaNuevo)
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ExcedenteEnergiaEnFuncionamiento>()
+                .HasOne(e => e.User)
+                .WithMany(u => u.ExcedentesEnergiaFuncionamiento)
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<ProduccionHidrogeno>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.ProduccionesHidrogeno)
+                .HasForeignKey(p => p.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TransporteHidrogeno>()
+                .HasOne(t => t.User)
+                .WithMany(u => u.TransportesHidrogeno)
+                .HasForeignKey(t => t.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<VendeAlquilaHidrogeno>()
+                .HasOne(v => v.User)
+                .WithMany(u => u.VentaAlquilerHidrogeno)
+                .HasForeignKey(v => v.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             // Índices únicos
@@ -40,26 +71,22 @@ namespace BlogSystem.API.Data
                 .HasIndex(u => u.Username)
                 .IsUnique();
 
-            //modelBuilder.Entity<RegistroUsuarioForm>(entity =>
-            //{
-            //    // Entity Framework convierte automáticamente enum a string
-            //    entity.Property(e => e.TipoEntidad)
-            //        .HasConversion<string>(); // Guarda como string en BD
-            //});
+            // Configuraciones de enums existentes (sin cambios)
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.TipoEntidad).HasConversion<string>();
+            });
 
-            // Configuración para ExcedenteEnergiaNuevo
             modelBuilder.Entity<ExcedenteEnergiaNuevo>(entity =>
             {
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
             });
 
-            // Configuración para ExcedenteEnergiaEnFuncionamiento  
             modelBuilder.Entity<ExcedenteEnergiaEnFuncionamiento>(entity =>
             {
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
             });
 
-            // Configuración para ProduccionHidrogeno
             modelBuilder.Entity<ProduccionHidrogeno>(entity =>
             {
                 entity.Property(e => e.TipoTecnologia).HasConversion<string>();
@@ -67,7 +94,6 @@ namespace BlogSystem.API.Data
                 entity.Property(e => e.TipoTecnologiaAlquiler).HasConversion<string>();
             });
 
-            // Configuración para VendeAlquilaHidrogeno
             modelBuilder.Entity<VendeAlquilaHidrogeno>(entity =>
             {
                 entity.Property(e => e.TipoTerreno).HasConversion<string>();

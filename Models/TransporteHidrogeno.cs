@@ -1,5 +1,6 @@
 ﻿using BlogSystem.API.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogSystem.API.Models
 {
@@ -8,7 +9,15 @@ namespace BlogSystem.API.Models
         [Key]
         public int Id { get; set; }
 
-        // FORMULARIO TRANSPORTE HIDRÓGENO
+        // AGREGAR: Foreign key hacia User
+        [Required]
+        public int UserId { get; set; }
+
+        // AGREGAR: Navigation property hacia User
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        // FORMULARIO TRANSPORTE HIDRÓGENO (tu código existente sin cambios)
         public bool LicenciaMercanciaPeligrosa { get; set; } //Si es FALSE aparece opcion de asesoramiento.
         public bool FalseLicenciaAsesoramiento { get; set; }
         public TipoTransporte TipoTransporte { get; set; }
@@ -27,6 +36,5 @@ namespace BlogSystem.API.Models
         public string? PaisTransporte { get; set; }
         public bool NecesitaFormacion { get; set; }
         public string? Observaciones { get; set; }
-
     }
 }
