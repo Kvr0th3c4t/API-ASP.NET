@@ -1,0 +1,36 @@
+# Visual Studio files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+
+# Visual Studio cache files
+*.cache
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.log
+*.tlog
+*.tmp
+*.tmp_proj
+*.vsidx
+*.db
+*.db-shm
+*.db-wal
+
+# ASP.NET Core
+appsettings.Development.json

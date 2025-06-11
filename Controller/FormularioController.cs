@@ -4,11 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BlogSystem.API.Models;
 using BlogSystem.API.DTOs;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace BlogSystem.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize] // Requiere autenticación para todos los métodos
     public class FormularioController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -16,6 +19,17 @@ namespace BlogSystem.API.Controllers
         public FormularioController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        // Método helper para extraer UserId del token JWT
+        private int GetCurrentUserId()
+        {
+            var userIdClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim))
+                throw new UnauthorizedAccessException("No se pudo identificar al usuario");
+
+            return int.Parse(userIdClaim);
         }
 
         [HttpPost("excedente-energia-nuevo")]
@@ -28,11 +42,11 @@ namespace BlogSystem.API.Controllers
 
             try
             {
+                var userId = GetCurrentUserId();
+
                 var excedente = new ExcedenteEnergiaNuevo
                 {
-                  
-
-                    // FORMULARIO ENERGIA
+                    UserId = userId,
                     InstalacionConstruida = dto.InstalacionConstruida,
                     InstalacionContruidaFalse = ConvertToDateOnly(dto.InstalacionContruidaFalse),
                     InstalacionEnConstruccion = dto.InstalacionEnConstruccion,
@@ -89,11 +103,11 @@ namespace BlogSystem.API.Controllers
 
             try
             {
+                var userId = GetCurrentUserId();
+
                 var produccionHidrogeno = new ProduccionHidrogeno
                 {
-              
-
-                    // FORMULARIO PRODUCCIÓN HIDRÓGENO
+                    UserId = userId,
                     InstalacionConstruida = dto.InstalacionConstruida,
                     TipoTecnologia = dto.TipoTecnologia,
                     OtrasTecnologias = dto.OtrasTecnologias,
@@ -148,36 +162,6 @@ namespace BlogSystem.API.Controllers
             }
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ProduccionHidrogeno>> GetProduccionHidrogeno(int id)
-        {
-            var produccionHidrogeno = await _context.ProduccionesHidrogeno.FindAsync(id);
-
-            if (produccionHidrogeno == null)
-            {
-                return NotFound();
-            }
-
-            return produccionHidrogeno;
-        }
-
-
-        [HttpGet("excedente-energia-nuevo/{id}")]
-        public async Task<ActionResult<ExcedenteEnergiaNuevo>> GetExcedenteEnergiaNuevo(int id)
-        {
-            var excedente = await _context.ExcedentesEnergiaNuevo.FindAsync(id);
-
-            if (excedente == null)
-            {
-                return NotFound();
-            }
-
-            return excedente;
-        }
-
-       
-
-
         [HttpPost("excedente-energia-funcionamiento")]
         public async Task<ActionResult<ExcedenteEnergiaEnFuncionamiento>> PostExcedenteEnergiaFuncionamiento(ExcedenteEnergiaEnFuncionamientoDto dto)
         {
@@ -188,11 +172,11 @@ namespace BlogSystem.API.Controllers
 
             try
             {
+                var userId = GetCurrentUserId();
+
                 var excedenteEnFuncionamiento = new ExcedenteEnergiaEnFuncionamiento
                 {
-                    
-
-                    // FORMULARIO ENERGIA EN FUNCIONAMIENTO
+                    UserId = userId,
                     TipoTecnologia = dto.TipoTecnologia,
                     OtrasTecnologias = dto.OtrasTecnologias,
                     CapacidadProduccionEnergia = dto.CapacidadProduccionEnergia,
@@ -227,23 +211,6 @@ namespace BlogSystem.API.Controllers
             }
         }
 
-        // Métodos GET complementarios siguiendo el mismo estilo
-
-        [HttpGet("excedente-energia-funcionamiento/{id}")]
-        public async Task<ActionResult<ExcedenteEnergiaEnFuncionamiento>> GetExcedenteEnergiaFuncionamiento(int id)
-        {
-            var excedenteEnFuncionamiento = await _context.ExcedentesEnergiaEnFuncionamiento.FindAsync(id);
-
-            if (excedenteEnFuncionamiento == null)
-            {
-                return NotFound();
-            }
-
-            return excedenteEnFuncionamiento;
-        }
-
-        
-
         [HttpPost("vende-alquila-hidrogeno")]
         public async Task<ActionResult<VendeAlquilaHidrogeno>> PostVendeAlquilaHidrogeno(VendeAlquilaHidrogenoDto dto)
         {
@@ -254,11 +221,11 @@ namespace BlogSystem.API.Controllers
 
             try
             {
+                var userId = GetCurrentUserId();
+
                 var vendeAlquila = new VendeAlquilaHidrogeno
                 {
-                    
-
-                    // FORMULARIO VENTA/ALQUILER HIDRÓGENO
+                    UserId = userId,
                     MetrosCuadradosTerreno = dto.MetrosCuadradosTerreno,
                     TipoTerreno = dto.TipoTerreno,
                     TieneLicencia = dto.TieneLicencia,
@@ -285,21 +252,6 @@ namespace BlogSystem.API.Controllers
             }
         }
 
-        [HttpGet("vende-alquila-hidrogeno/{id}")]
-        public async Task<ActionResult<VendeAlquilaHidrogeno>> GetVendeAlquilaHidrogeno(int id)
-        {
-            var vendeAlquila = await _context.VentaAlquilerHidrogeno.FindAsync(id);
-
-            if (vendeAlquila == null)
-            {
-                return NotFound();
-            }
-
-            return vendeAlquila;
-        }
-
-        
-
         [HttpPost("transporte-hidrogeno")]
         public async Task<ActionResult<TransporteHidrogeno>> PostTransporteHidrogeno(TransporteHidrogenoDto dto)
         {
@@ -310,11 +262,11 @@ namespace BlogSystem.API.Controllers
 
             try
             {
+                var userId = GetCurrentUserId();
+
                 var transporte = new TransporteHidrogeno
                 {
-                    
-
-                    // FORMULARIO TRANSPORTE HIDRÓGENO
+                    UserId = userId,
                     LicenciaMercanciaPeligrosa = dto.LicenciaMercanciaPeligrosa,
                     FalseLicenciaAsesoramiento = dto.FalseLicenciaAsesoramiento,
                     TipoTransporte = dto.TipoTransporte,
@@ -343,23 +295,9 @@ namespace BlogSystem.API.Controllers
             }
         }
 
-        [HttpGet("transporte-hidrogeno/{id}")]
-        public async Task<ActionResult<TransporteHidrogeno>> GetTransporteHidrogeno(int id)
-        {
-            var transporte = await _context.TransportesHidrogeno.FindAsync(id);
-
-            if (transporte == null)
-            {
-                return NotFound();
-            }
-
-            return transporte;
-        }
-
-        
-
-        //RUTAS PARA EL 'CHATBOT' DE CONTACTA
+        // FORMULARIO CONTACTO (SIN AUTENTICACIÓN)
         [HttpPost("contacto-form")]
+        [AllowAnonymous]
         public async Task<ActionResult<ContactoForm>> PostContactoForm(ContactoFormDto dto)
         {
             if (!ModelState.IsValid)
@@ -369,7 +307,6 @@ namespace BlogSystem.API.Controllers
 
             try
             {
-                // Verificar si ya existe un contacto reciente con el mismo email (opcional)
                 var contactoReciente = await _context.ContactoForm
                     .Where(c => c.Email == dto.Email &&
                                c.FechaCreacion > DateTime.UtcNow.AddMinutes(-5))
@@ -398,7 +335,84 @@ namespace BlogSystem.API.Controllers
             }
         }
 
+        // MÉTODOS GET INDIVIDUALES
+        [HttpGet("excedente-energia-nuevo/{id}")]
+        public async Task<ActionResult<ExcedenteEnergiaNuevo>> GetExcedenteEnergiaNuevo(int id)
+        {
+            var userId = GetCurrentUserId();
+            var excedente = await _context.ExcedentesEnergiaNuevo
+                .FirstOrDefaultAsync(e => e.Id == id && e.UserId == userId);
+
+            if (excedente == null)
+            {
+                return NotFound("Formulario no encontrado o no tienes permisos para verlo");
+            }
+
+            return excedente;
+        }
+
+        [HttpGet("produccion-hidrogeno/{id}")]
+        public async Task<ActionResult<ProduccionHidrogeno>> GetProduccionHidrogeno(int id)
+        {
+            var userId = GetCurrentUserId();
+            var produccionHidrogeno = await _context.ProduccionesHidrogeno
+                .FirstOrDefaultAsync(p => p.Id == id && p.UserId == userId);
+
+            if (produccionHidrogeno == null)
+            {
+                return NotFound("Formulario no encontrado o no tienes permisos para verlo");
+            }
+
+            return produccionHidrogeno;
+        }
+
+        [HttpGet("excedente-energia-funcionamiento/{id}")]
+        public async Task<ActionResult<ExcedenteEnergiaEnFuncionamiento>> GetExcedenteEnergiaFuncionamiento(int id)
+        {
+            var userId = GetCurrentUserId();
+            var excedenteEnFuncionamiento = await _context.ExcedentesEnergiaEnFuncionamiento
+                .FirstOrDefaultAsync(e => e.Id == id && e.UserId == userId);
+
+            if (excedenteEnFuncionamiento == null)
+            {
+                return NotFound("Formulario no encontrado o no tienes permisos para verlo");
+            }
+
+            return excedenteEnFuncionamiento;
+        }
+
+        [HttpGet("vende-alquila-hidrogeno/{id}")]
+        public async Task<ActionResult<VendeAlquilaHidrogeno>> GetVendeAlquilaHidrogeno(int id)
+        {
+            var userId = GetCurrentUserId();
+            var vendeAlquila = await _context.VentaAlquilerHidrogeno
+                .FirstOrDefaultAsync(v => v.Id == id && v.UserId == userId);
+
+            if (vendeAlquila == null)
+            {
+                return NotFound("Formulario no encontrado o no tienes permisos para verlo");
+            }
+
+            return vendeAlquila;
+        }
+
+        [HttpGet("transporte-hidrogeno/{id}")]
+        public async Task<ActionResult<TransporteHidrogeno>> GetTransporteHidrogeno(int id)
+        {
+            var userId = GetCurrentUserId();
+            var transporte = await _context.TransportesHidrogeno
+                .FirstOrDefaultAsync(t => t.Id == id && t.UserId == userId);
+
+            if (transporte == null)
+            {
+                return NotFound("Formulario no encontrado o no tienes permisos para verlo");
+            }
+
+            return transporte;
+        }
+
         [HttpGet("contacto-form/{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<ContactoForm>> GetContactoForm(int id)
         {
             var contacto = await _context.ContactoForm.FindAsync(id);
@@ -412,11 +426,10 @@ namespace BlogSystem.API.Controllers
         }
 
         [HttpGet("contacto-form")]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<ContactoForm>>> GetContactosForms()
         {
             return await _context.ContactoForm.ToListAsync();
-        }
-
+        }        
     }
 }
-    

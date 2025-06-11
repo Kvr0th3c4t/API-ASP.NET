@@ -67,5 +67,12 @@ namespace BlogSystem.API.Models
 
         // Navegación
         public virtual ICollection<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
+
+        // AGREGAR: Navegación para formularios
+        public virtual ICollection<ExcedenteEnergiaNuevo> ExcedentesEnergiaNuevo { get; set; } = new List<ExcedenteEnergiaNuevo>();
+        public virtual ICollection<ExcedenteEnergiaEnFuncionamiento> ExcedentesEnergiaFuncionamiento { get; set; } = new List<ExcedenteEnergiaEnFuncionamiento>();
+        public virtual ICollection<ProduccionHidrogeno> ProduccionesHidrogeno { get; set; } = new List<ProduccionHidrogeno>();
+        public virtual ICollection<TransporteHidrogeno> TransportesHidrogeno { get; set; } = new List<TransporteHidrogeno>();
+        public virtual ICollection<VendeAlquilaHidrogeno> VentaAlquilerHidrogeno { get; set; } = new List<VendeAlquilaHidrogeno>();
     }
 }

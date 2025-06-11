@@ -1,5 +1,6 @@
 ﻿using BlogSystem.API.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogSystem.API.Models
 {
@@ -8,7 +9,15 @@ namespace BlogSystem.API.Models
         [Key]
         public int Id { get; set; }
 
-        // FORMULARIO VENTA/ALQUILER HIDRÓGENO
+        // AGREGAR: Foreign key hacia User
+        [Required]
+        public int UserId { get; set; }
+
+        // AGREGAR: Navigation property hacia User
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        // FORMULARIO VENTA/ALQUILER HIDRÓGENO (tu código existente sin cambios)
         public int? MetrosCuadradosTerreno { get; set; }
         public TipoTerreno TipoTerreno { get; set; }
         public bool? TieneLicencia { get; set; } //Si es TRUE indicar cuál

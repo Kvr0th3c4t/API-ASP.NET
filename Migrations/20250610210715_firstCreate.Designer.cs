@@ -4,6 +4,7 @@ using BlogSystem.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BlogSystem.API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250610210715_firstCreate")]
+    partial class firstCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -548,9 +551,8 @@ namespace BlogSystem.API.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("TipoEntidad")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TipoEntidad")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -641,7 +643,7 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.ExcedenteEnergiaEnFuncionamiento", b =>
                 {
                     b.HasOne("BlogSystem.API.Models.User", "User")
-                        .WithMany("ExcedentesEnergiaFuncionamiento")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -652,7 +654,7 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.ExcedenteEnergiaNuevo", b =>
                 {
                     b.HasOne("BlogSystem.API.Models.User", "User")
-                        .WithMany("ExcedentesEnergiaNuevo")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -663,7 +665,7 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.ProduccionHidrogeno", b =>
                 {
                     b.HasOne("BlogSystem.API.Models.User", "User")
-                        .WithMany("ProduccionesHidrogeno")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -674,7 +676,7 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.TransporteHidrogeno", b =>
                 {
                     b.HasOne("BlogSystem.API.Models.User", "User")
-                        .WithMany("TransportesHidrogeno")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -685,7 +687,7 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.VendeAlquilaHidrogeno", b =>
                 {
                     b.HasOne("BlogSystem.API.Models.User", "User")
-                        .WithMany("VentaAlquilerHidrogeno")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -696,16 +698,6 @@ namespace BlogSystem.API.Migrations
             modelBuilder.Entity("BlogSystem.API.Models.User", b =>
                 {
                     b.Navigation("BlogPosts");
-
-                    b.Navigation("ExcedentesEnergiaFuncionamiento");
-
-                    b.Navigation("ExcedentesEnergiaNuevo");
-
-                    b.Navigation("ProduccionesHidrogeno");
-
-                    b.Navigation("TransportesHidrogeno");
-
-                    b.Navigation("VentaAlquilerHidrogeno");
                 });
 #pragma warning restore 612, 618
         }
