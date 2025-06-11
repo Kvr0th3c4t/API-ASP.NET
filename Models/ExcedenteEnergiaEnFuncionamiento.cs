@@ -1,5 +1,6 @@
 ﻿using BlogSystem.API.Models.Enums;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlogSystem.API.Models
 {
@@ -8,8 +9,15 @@ namespace BlogSystem.API.Models
         [Key]
         public int Id { get; set; }
 
+        // AGREGAR: Foreign key hacia User
+        [Required]
+        public int UserId { get; set; }
 
-        //FORMULARIO ENERGIA EN FUNCIONAMIENTO
+        // AGREGAR: Navigation property hacia User
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        //FORMULARIO ENERGIA EN FUNCIONAMIENTO (tu código existente sin cambios)
         [Required]
         public TipoTecnologia TipoTecnologia { get; set; }
         public string? OtrasTecnologias { get; set; } //Si el tipo de tecnología es Otras, entonces se muestra este campo para indicar cuál es la otra tecnología.

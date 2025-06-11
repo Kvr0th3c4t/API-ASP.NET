@@ -9,7 +9,15 @@ namespace BlogSystem.API.Models
         [Key]
         public int Id { get; set; }
 
-        // FORMULARIO PRODUCCIÓN HIDRÓGENO
+        // AGREGAR: Foreign key hacia User
+        [Required]
+        public int UserId { get; set; }
+
+        // AGREGAR: Navigation property hacia User
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        // FORMULARIO PRODUCCIÓN HIDRÓGENO (tu código existente sin cambios)
         public bool InstalacionConstruida { get; set; }
 
         [Required]
@@ -88,7 +96,7 @@ namespace BlogSystem.API.Models
 
         public bool AlquilarTerrenoConInstalaciones { get; set; } //Si es TRUE, seleccionar años de alquiler.
 
-        public TipoTecnologia? TipoTecnologiaAlquiler { get; set; } 
+        public TipoTecnologia? TipoTecnologiaAlquiler { get; set; }
 
         [StringLength(500)]
         public string? OtrasTecnologiasAlquiler { get; set; } //Si el tipo de tecnología es Otras, entonces se muestra este campo para indicar cuál es la otra tecnología.
