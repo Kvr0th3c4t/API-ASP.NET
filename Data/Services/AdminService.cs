@@ -2,6 +2,9 @@
 using BlogSystem.API.Models.DTOs;
 using BlogSystem.API.Models;
 using Microsoft.EntityFrameworkCore;
+using BlogSystem.API.Models.Enums;
+using BlogSystem.API.DTOs;
+using BlogSystem.API.Models.Dtos;
 
 namespace BlogSystem.API.Services
 {
@@ -45,19 +48,7 @@ namespace BlogSystem.API.Services
                     Pais = u.Pais,
                     FechaRegistro = u.FechaRegistro,
                     Activo = u.Activo,
-                    CreatedAt = u.CreatedAt,
-
-                    // Angular calculará estos valores
-                    FormulariosExcedenteNuevo = u.ExcedentesEnergiaNuevo.Count,
-                    FormulariosExcedenteFuncionamiento = u.ExcedentesEnergiaFuncionamiento.Count,
-                    FormulariosProduccionHidrogeno = u.ProduccionesHidrogeno.Count,
-                    FormulariosTransporteHidrogeno = u.TransportesHidrogeno.Count,
-                    FormulariosVentaAlquilerHidrogeno = u.VentaAlquilerHidrogeno.Count,
-                    TotalFormularios = u.ExcedentesEnergiaNuevo.Count +
-                                     u.ExcedentesEnergiaFuncionamiento.Count +
-                                     u.ProduccionesHidrogeno.Count +
-                                     u.TransportesHidrogeno.Count +
-                                     u.VentaAlquilerHidrogeno.Count
+                    CreatedAt = u.CreatedAt
                 })
                 .ToListAsync();
         }
@@ -93,17 +84,8 @@ namespace BlogSystem.API.Services
                     Pais = u.Pais,
                     FechaRegistro = u.FechaRegistro,
                     Activo = u.Activo,
-                    CreatedAt = u.CreatedAt,
-                    FormulariosExcedenteNuevo = u.ExcedentesEnergiaNuevo.Count,
-                    FormulariosExcedenteFuncionamiento = u.ExcedentesEnergiaFuncionamiento.Count,
-                    FormulariosProduccionHidrogeno = u.ProduccionesHidrogeno.Count,
-                    FormulariosTransporteHidrogeno = u.TransportesHidrogeno.Count,
-                    FormulariosVentaAlquilerHidrogeno = u.VentaAlquilerHidrogeno.Count,
-                    TotalFormularios = u.ExcedentesEnergiaNuevo.Count +
-                                     u.ExcedentesEnergiaFuncionamiento.Count +
-                                     u.ProduccionesHidrogeno.Count +
-                                     u.TransportesHidrogeno.Count +
-                                     u.VentaAlquilerHidrogeno.Count
+                    CreatedAt = u.CreatedAt
+                  
                 })
                 .FirstOrDefaultAsync();
         }
@@ -149,30 +131,263 @@ namespace BlogSystem.API.Services
 
         public async Task<UserFormulariosDto?> GetUserFormulariosAsync(int userId)
         {
-            var user = await GetUserByIdAsync(userId);
+            var user = await _context.Users.FindAsync(userId);
             if (user == null) return null;
-
-            var userWithFormularios = await _context.Users
-                .Include(u => u.ExcedentesEnergiaNuevo)
-                .Include(u => u.ExcedentesEnergiaFuncionamiento)
-                .Include(u => u.ProduccionesHidrogeno)
-                .Include(u => u.TransportesHidrogeno)
-                .Include(u => u.VentaAlquilerHidrogeno)
-                .Include(u => u.BlogPosts)
-                .FirstOrDefaultAsync(u => u.Id == userId);
-
-            if (userWithFormularios == null) return null;
 
             return new UserFormulariosDto
             {
-                Usuario = user,
-                ExcedentesEnergiaNuevo = userWithFormularios.ExcedentesEnergiaNuevo.OrderByDescending(e => e.Id).ToList(),
-                ExcedentesEnergiaFuncionamiento = userWithFormularios.ExcedentesEnergiaFuncionamiento.OrderByDescending(e => e.Id).ToList(),
-                ProduccionesHidrogeno = userWithFormularios.ProduccionesHidrogeno.OrderByDescending(p => p.Id).ToList(),
-                TransportesHidrogeno = userWithFormularios.TransportesHidrogeno.OrderByDescending(t => t.Id).ToList(),
-                VentaAlquilerHidrogeno = userWithFormularios.VentaAlquilerHidrogeno.OrderByDescending(v => v.Id).ToList(),
-                BlogPosts = userWithFormularios.BlogPosts.OrderByDescending(b => b.Id).ToList()
+                ExcedentesEnergiaNuevo = await _context.ExcedentesEnergiaNuevo
+                    .Where(e => e.UserId == userId)
+                    .OrderByDescending(e => e.Id)
+                    .Select(e => new ExcedenteEnergiaNuevoDto
+                    {
+                        Id = e.Id,
+                        UserId = e.UserId,
+                        InstalacionConstruida = e.InstalacionConstruida,
+                        InstalacionContruidaFalse = e.InstalacionContruidaFalse,
+                        InstalacionEnConstruccion = e.InstalacionEnConstruccion,
+                        InstalacionEnConstruccionTrue = e.InstalacionEnConstruccionTrue,
+                        KwTotalesProduccion = e.KwTotalesProduccion,
+                        TipoTecnologia = e.TipoTecnologia,
+                        OtrasTecnologias = e.OtrasTecnologias,
+                        DestinaInstalacion = e.DestinaInstalacion,
+                        KwDestinados = e.KwDestinados,
+                        NumeroHoras = e.NumeroHoras,
+                        PaisInstalacion = e.PaisInstalacion,
+                        ProvinciaInstalacion = e.ProvinciaInstalacion,
+                        MunicipioInstalacion = e.MunicipioInstalacion,
+                        Coordenadas = e.Coordenadas,
+                        TieneLicencia = e.TieneLicencia,
+                        CapacidadProduccionLicencia = e.CapacidadProduccionLicencia,
+                        QuierePersonalTramitar = e.QuierePersonalTramitar,
+                        QuiereProducirConExcedente = e.QuiereProducirConExcedente,
+                        AlquilarInstalaciones = e.AlquilarInstalaciones,
+                        AnosAlquiler = e.AnosAlquiler
+                    })
+                    .ToListAsync(),
+
+                ExcedentesEnergiaFuncionamiento = await _context.ExcedentesEnergiaEnFuncionamiento
+                    .Where(e => e.UserId == userId)
+                    .OrderByDescending(e => e.Id)
+                    .Select(e => new ExcedenteEnergiaEnFuncionamientoDto
+                    {
+                        Id = e.Id,
+                        UserId = e.UserId,
+                        TipoTecnologia = e.TipoTecnologia,
+                        OtrasTecnologias = e.OtrasTecnologias,
+                        CapacidadProduccionEnergia = e.CapacidadProduccionEnergia,
+                        ExcedenteEnergia = e.ExcedenteEnergia,
+                        HorasExcedenteEnergia = e.HorasExcedenteEnergia,
+                        DiasExcedenteEnergia = e.DiasExcedenteEnergia,
+                        CapacidadProduccion = e.CapacidadProduccion,
+                        ProduceEnergia = e.ProduceEnergia,
+                        FechaInicioProduccion = e.FechaInicioProduccion,
+                        VierteEnergiaRed = e.VierteEnergiaRed,
+                        VierteEnergiaTrue = e.VierteEnergiaTrue,
+                        Autoconsumo = e.Autoconsumo,
+                        PaisInstalacion = e.PaisInstalacion,
+                        ProvinciaInstalacion = e.ProvinciaInstalacion,
+                        MunicipioInstalacion = e.MunicipioInstalacion,
+                        Coordenadas = e.Coordenadas,
+                        TieneLicencia = e.TieneLicencia,
+                        CapacidadProduccionLicencia = e.CapacidadProduccionLicencia,
+                        QuiereProducirConExcedente = e.QuiereProducirConExcedente,
+                        AlquilarParteOTotalidad = e.AlquilarParteOTotalidad,
+                        Observaciones = e.Observaciones
+                    })
+                    .ToListAsync(),
+
+                ProduccionesHidrogeno = await _context.ProduccionesHidrogeno
+                    .Where(p => p.UserId == userId)
+                    .OrderByDescending(p => p.Id)
+                    .Select(p => new ProduccionHidrogenoDto
+                    {
+                        Id = p.Id,
+                        UserId = p.UserId,
+                        InstalacionConstruida = p.InstalacionConstruida,
+                        TipoTecnologia = p.TipoTecnologia,
+                        OtrasTecnologias = p.OtrasTecnologias,
+                        CuantoKiloGramosHora = p.CuantoKiloGramosHora,
+                        Autoconsumo = p.Autoconsumo,
+                        TipoSectorProduccion = p.TipoSectorProduccion,
+                        MovilidadSelect = p.MovilidadSelect,
+                        ResidencialSelect = p.ResidencialSelect,
+                        IndustrialSelect = p.IndustrialSelect,
+                        DistribucionSelect = p.DistribucionSelect,
+                        OtroSector = p.OtroSector,
+                        PaisProduccion = p.PaisProduccion,
+                        ProvinciaProduccion = p.ProvinciaProduccion,
+                        MunicipioProduccion = p.MunicipioProduccion,
+                        PaisConsumicion = p.PaisConsumicion,
+                        ProvinciaConsumicion = p.ProvinciaConsumicion,
+                        MunicipioConsumicion = p.MunicipioConsumicion,
+                        MetanolVerde = p.MetanolVerde,
+                        EquiposProducir = p.EquiposProducir,
+                        EquiposAlmacenar = p.EquiposAlmacenar,
+                        OtraTecnologia = p.OtraTecnologia,
+                        IndicarCual = p.IndicarCual,
+                        NecesitaEmpresa = p.NecesitaEmpresa,
+                        PaisNecesita = p.PaisNecesita,
+                        ProvinciaNecesita = p.ProvinciaNecesita,
+                        MunicipioNecesita = p.MunicipioNecesita,
+                        BaresHidrogeno = p.BaresHidrogeno,
+                        AlquilarTerrenoSinInstalaciones = p.AlquilarTerrenoSinInstalaciones,
+                        AnosAlquiler = p.AnosAlquiler,
+                        AlquilarTerrenoConInstalaciones = p.AlquilarTerrenoConInstalaciones,
+                        TipoTecnologiaAlquiler = p.TipoTecnologiaAlquiler,
+                        OtrasTecnologiasAlquiler = p.OtrasTecnologiasAlquiler,
+                        ContratarPPA = p.ContratarPPA,
+                        AyudaProveedorPPA = p.AyudaProveedorPPA,
+                        ProporcionClientes = p.ProporcionClientes,
+                        RedEmpresas = p.RedEmpresas,
+                        RedHidrogeneras = p.RedHidrogeneras,
+                        RedPuntosDispensacion = p.RedPuntosDispensacion,
+                        TramitacionSolicitudes = p.TramitacionSolicitudes,
+                        FechaHidrogenoDisponible = p.FechaHidrogenoDisponible,
+                        Observaciones = p.Observaciones
+                    })
+                    .ToListAsync(),
+
+                TransportesHidrogeno = await _context.TransportesHidrogeno
+                    .Where(t => t.UserId == userId)
+                    .OrderByDescending(t => t.Id)
+                    .Select(t => new TransporteHidrogenoDto
+                    {
+                        Id = t.Id,
+                        UserId = t.UserId,
+                        LicenciaMercanciaPeligrosa = t.LicenciaMercanciaPeligrosa,
+                        FalseLicenciaAsesoramiento = t.FalseLicenciaAsesoramiento,
+                        TipoTransporte = t.TipoTransporte,
+                        TieneCaminonesHidrogeno = t.TieneCaminonesHidrogeno,
+                        TieneCamionesMetanol = t.TieneCamionesMetanol,
+                        TieneCamionesAmoniaco = t.TieneCamionesAmoniaco,
+                        RedTransporte = t.RedTransporte,
+                        TipoRed = t.TipoRed,
+                        TipoTransporteHidrogeno = t.TipoTransporteHidrogeno,
+                        PresionHidrogeno = t.PresionHidrogeno,
+                        MunicipioTransporte = t.MunicipioTransporte,
+                        ProvinciaTransporte = t.ProvinciaTransporte,
+                        PaisTransporte = t.PaisTransporte,
+                        NecesitaFormacion = t.NecesitaFormacion,
+                        Observaciones = t.Observaciones
+                    })
+                    .ToListAsync(),
+
+                VendeAlquilaHidrogeno = await _context.VentaAlquilerHidrogeno
+                    .Where(v => v.UserId == userId)
+                    .OrderByDescending(v => v.Id)
+                    .Select(v => new VendeAlquilaHidrogenoDto
+                    {
+                        Id = v.Id,
+                        UserId = v.UserId,
+                        MetrosCuadradosTerreno = v.MetrosCuadradosTerreno,
+                        TipoTerreno = v.TipoTerreno,
+                        TieneLicencia = v.TieneLicencia,
+                        Licencia = v.Licencia,
+                        VenderAlquilar = v.VenderAlquilar,
+                        AnosAlquiler = v.AnosAlquiler,
+                        PrecioAlquiler = v.PrecioAlquiler,
+                        PrecioVenta = v.PrecioVenta,
+                        PaisAlVen = v.PaisAlVen,
+                        ProvinciaAlVen = v.ProvinciaAlVen,
+                        MunicipioAlVen = v.MunicipioAlVen,
+                        Coordenadas = v.Coordenadas,
+                        Observaciones = v.Observaciones
+                    })
+                    .ToListAsync()
             };
         }
+
+        public async Task<List<AdminUserDto>> GetEmpresasAsync()
+        {
+            return await _context.Users
+                .Where(u => u.TipoEntidad == TipoEntidad.EMPRESA)
+                .Select(u => new AdminUserDto
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    Email = u.Email,
+                    Role = u.Role,
+                    TipoEntidad = u.TipoEntidad,
+                    Nombre = u.Nombre,
+                    Apellidos = u.Apellidos,
+                    Empresa = u.Empresa,
+                    CIF = u.CIF,
+                    DNI = u.DNI,
+                    Representante = u.Representante,
+                    NombreRepresentante = u.NombreRepresentante,
+                    ApellidosRepresentante = u.ApellidosRepresentante,
+                    Telefono = u.Telefono,
+                    Municipio = u.Municipio,
+                    Provincia = u.Provincia,
+                    Pais = u.Pais,
+                    FechaRegistro = u.FechaRegistro,
+                    Activo = u.Activo,
+                    CreatedAt = u.CreatedAt
+                })
+                .ToListAsync();
+        }
+
+        public async Task<List<AdminUserDto>> GetParticularesAsync()
+        {
+            return await _context.Users
+                .Where(u => u.TipoEntidad == TipoEntidad.PARTICULAR)
+                .Select(u => new AdminUserDto
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    Email = u.Email,
+                    Role = u.Role,
+                    TipoEntidad = u.TipoEntidad,
+                    Nombre = u.Nombre,
+                    Apellidos = u.Apellidos,
+                    Empresa = u.Empresa,
+                    CIF = u.CIF,
+                    DNI = u.DNI,
+                    Representante = u.Representante,
+                    NombreRepresentante = u.NombreRepresentante,
+                    ApellidosRepresentante = u.ApellidosRepresentante,
+                    Telefono = u.Telefono,
+                    Municipio = u.Municipio,
+                    Provincia = u.Provincia,
+                    Pais = u.Pais,
+                    FechaRegistro = u.FechaRegistro,
+                    Activo = u.Activo,
+                    CreatedAt = u.CreatedAt
+                })
+                .ToListAsync();
+        }
+
+        // Método genérico (estilo Spring)
+        public async Task<List<AdminUserDto>> GetByTipoEntidadAsync(TipoEntidad tipoEntidad)
+        {
+            return await _context.Users
+                .Where(u => u.TipoEntidad == tipoEntidad)
+                .Select(u => new AdminUserDto
+                {
+                    Id = u.Id,
+                    Username = u.Username,
+                    Email = u.Email,
+                    Role = u.Role,
+                    TipoEntidad = u.TipoEntidad,
+                    Nombre = u.Nombre,
+                    Apellidos = u.Apellidos,
+                    Empresa = u.Empresa,
+                    CIF = u.CIF,
+                    DNI = u.DNI,
+                    Representante = u.Representante,
+                    NombreRepresentante = u.NombreRepresentante,
+                    ApellidosRepresentante = u.ApellidosRepresentante,
+                    Telefono = u.Telefono,
+                    Municipio = u.Municipio,
+                    Provincia = u.Provincia,
+                    Pais = u.Pais,
+                    FechaRegistro = u.FechaRegistro,
+                    Activo = u.Activo,
+                    CreatedAt = u.CreatedAt
+                })
+                .ToListAsync();
+        }
     }
+
 }

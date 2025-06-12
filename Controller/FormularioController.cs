@@ -48,9 +48,9 @@ namespace BlogSystem.API.Controllers
                 {
                     UserId = userId,
                     InstalacionConstruida = dto.InstalacionConstruida,
-                    InstalacionContruidaFalse = ConvertToDateOnly(dto.InstalacionContruidaFalse),
+                    InstalacionContruidaFalse = dto.InstalacionContruidaFalse,
                     InstalacionEnConstruccion = dto.InstalacionEnConstruccion,
-                    InstalacionEnConstruccionTrue = ConvertToDateOnly(dto.InstalacionEnConstruccionTrue),
+                    InstalacionEnConstruccionTrue = dto.InstalacionEnConstruccionTrue,
                     KwTotalesProduccion = dto.KwTotalesProduccion,
                     TipoTecnologia = dto.TipoTecnologia,
                     OtrasTecnologias = dto.OtrasTecnologias,

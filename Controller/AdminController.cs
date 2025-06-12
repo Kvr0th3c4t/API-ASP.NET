@@ -121,9 +121,6 @@ namespace BlogSystem.API.Controllers
             }
         }
 
-        /// <summary>
-        /// Obtener todos los formularios de un usuario específico
-        /// </summary>
         [HttpGet("users/{id}/formularios")]
         public async Task<ActionResult<UserFormulariosDto>> GetUserFormularios(int id)
         {
@@ -143,6 +140,20 @@ namespace BlogSystem.API.Controllers
             {
                 return StatusCode(500, new { message = "Error al obtener los formularios del usuario", error = ex.Message });
             }
+        }
+
+        [HttpGet("empresas")]
+        public async Task<ActionResult<List<AdminUserDto>>> GetEmpresas()
+        {
+            var empresas = await _adminService.GetEmpresasAsync();
+            return Ok(empresas);
+        }
+
+        [HttpGet("particulares")]
+        public async Task<ActionResult<List<AdminUserDto>>> GetParticulares()
+        {
+            var particulares = await _adminService.GetParticularesAsync();
+            return Ok(particulares);
         }
     }
 }

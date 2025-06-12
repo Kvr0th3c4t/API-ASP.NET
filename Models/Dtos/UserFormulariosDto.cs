@@ -1,15 +1,14 @@
-﻿
-// Models/DTOs/UserFormulariosDto.cs
+﻿using BlogSystem.API.DTOs;
+using BlogSystem.API.Models.Dtos;
+
 namespace BlogSystem.API.Models.DTOs
 {
     public class UserFormulariosDto
     {
-        public AdminUserDto Usuario { get; set; } = new();
-        public List<ExcedenteEnergiaNuevo> ExcedentesEnergiaNuevo { get; set; } = new();
-        public List<ExcedenteEnergiaEnFuncionamiento> ExcedentesEnergiaFuncionamiento { get; set; } = new();
-        public List<ProduccionHidrogeno> ProduccionesHidrogeno { get; set; } = new();
-        public List<TransporteHidrogeno> TransportesHidrogeno { get; set; } = new();
-        public List<VendeAlquilaHidrogeno> VentaAlquilerHidrogeno { get; set; } = new();
-        public List<BlogPost> BlogPosts { get; set; } = new();
+        public List<ExcedenteEnergiaNuevoDto> ExcedentesEnergiaNuevo { get; set; } = new();
+        public List<ExcedenteEnergiaEnFuncionamientoDto> ExcedentesEnergiaFuncionamiento { get; set; } = new();
+        public List<ProduccionHidrogenoDto> ProduccionesHidrogeno { get; set; } = new();
+        public List<TransporteHidrogenoDto> TransportesHidrogeno { get; set; } = new();
+        public List<VendeAlquilaHidrogenoDto> VendeAlquilaHidrogeno { get; set; } = new();
     }
 }

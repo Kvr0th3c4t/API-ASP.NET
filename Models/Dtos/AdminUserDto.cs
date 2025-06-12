@@ -26,12 +26,5 @@ namespace BlogSystem.API.Models.DTOs
         public bool Activo { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Contadores básicos (Angular puede usarlos o recalcular)
-        public int TotalFormularios { get; set; }
-        public int FormulariosExcedenteNuevo { get; set; }
-        public int FormulariosExcedenteFuncionamiento { get; set; }
-        public int FormulariosProduccionHidrogeno { get; set; }
-        public int FormulariosTransporteHidrogeno { get; set; }
-        public int FormulariosVentaAlquilerHidrogeno { get; set; }
     }
 }
